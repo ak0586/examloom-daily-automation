@@ -13,8 +13,8 @@ test.py
 setup.sh
 
 # Logs
-logs/
-*.log
+# logs/
+# *.log
 
 # Generated Content & Temp Files
 assets/temp/
