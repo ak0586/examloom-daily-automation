@@ -1,4 +1,4 @@
-# 🎬 Educational Video Automation Pipeline v2.0
+# 🎬 Educational Video Automation Pipeline
 
 ## Single JSON Design - Self-Contained Questions
 
