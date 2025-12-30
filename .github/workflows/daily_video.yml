@@ -1,5 +1,8 @@
 name: Daily Educational Video
 
+permissions:
+  contents: write
+  
 on:
   schedule:
     # Morning upload: 08:00 AM IST (02:30 UTC)
