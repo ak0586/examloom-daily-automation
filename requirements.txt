@@ -1,0 +1,37 @@
+# Core Dependencies
+python-dotenv==1.0.0
+PyYAML==6.0.1
+
+# Image Processing
+Pillow==10.1.0
+
+# Video Processing (FFmpeg wrapper)
+ffmpeg-python==0.2.0
+
+# HTTP & API
+requests==2.31.0
+httpx==0.25.2
+
+# Facebook Integration
+facebook-sdk==3.1.0
+
+# YouTube Integration
+google-api-python-client>=2.108.0
+google-auth-oauthlib>=1.1.0
+google-auth-httplib2>=0.1.1
+
+# Telegram Bot
+python-telegram-bot==20.7
+
+# Browser Automation (backup for Facebook)
+selenium==4.15.2
+webdriver-manager==4.0.1
+
+# Utilities
+schedule==1.2.0
+colorama==0.4.6
+tqdm==4.66.1
+
+# Testing (optional)
+pytest==7.4.3
+pytest-cov==4.1.0

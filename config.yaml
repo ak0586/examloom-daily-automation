@@ -1,0 +1,120 @@
+# Configuration for Educational Video Automation Pipeline v2.0
+
+# Video Specifications
+video:
+  resolution:
+    width: 1080
+    height: 1920
+  duration: 20  # seconds
+  fps: 30
+  format: "mp4"
+  codec: "libx264"
+  preset: "medium"
+  crf: 23  # Quality (18-28, lower = better)
+
+# Image Specifications (Now generates full 1920 height with embedded overlays)
+image:
+  resolution:
+    width: 1080
+    height: 1920  # Full video height - includes header and footer
+  background_color: "#FFFFFF"
+  padding: 80
+  format: "PNG"
+  
+  # Typography
+  fonts:
+    question:
+      size: 70  # Increased for better visibility
+      weight: "Medium"
+      color: "#000000"
+    options:
+      size: 60  # Increased for better visibility
+      weight: "Regular"
+      color: "#000000"
+  
+  # Layout
+  layout:
+    line_spacing: 1.8  # Increased from 1.5
+    option_spacing: 50  # Increased from 35
+    label_spacing: 30  # Increased from 25
+
+# Overlays (embedded in image, not video)
+overlays:
+  header:
+    text: "🧠 {type} Practice | Question #{id}"
+    font_size: 70
+    color: "#FFFFFF"
+    background: "#283593"  # Premium Indigo Blue
+    height: 200
+  
+  footer:
+    text: "⏸️ Pause & Comment Your Answer 👇"
+    font_size: 60
+    color: "#FFFFFF"
+    background: "#283593"  # Premium Indigo Blue
+    height: 200
+  
+  # Zoom effect (applied during video creation)
+  zoom:
+    start_scale: 1.00
+    end_scale: 1.03
+    duration: 20
+
+# Content Files (v2.0 - Single JSON)
+data:
+  questions: "data/questions.json"
+  used_log: "data/used_questions.log"
+
+# Upload Settings
+upload:
+  facebook:
+    enabled: true  # Set to true when ready
+    page_id: "${FACEBOOK_PAGE_ID}"
+    access_token: "${FACEBOOK_ACCESS_TOKEN}"
+    retry_attempts: 3
+    retry_delay: 5  # seconds
+  
+  youtube:
+    enabled: true  # Set to true when ready
+    client_secrets_file: "client_secrets.json"
+    credentials_file: "youtube_credentials.json"
+    retry_attempts: 3
+    retry_delay: 5
+    privacy_status: "public"  # public, unlisted, private
+    category_id: "27"  # Education
+
+# Telegram Notifications
+telegram:
+  enabled: true  # Set to true when ready
+  bot_token: "${TELEGRAM_BOT_TOKEN}"
+  chat_id: "${TELEGRAM_CHAT_ID}"
+
+# Automation Schedule
+schedule:
+  times:
+    - "09:00"  # 9 AM
+    - "21:00"  # 9 PM
+  timezone: "UTC"
+
+# File Paths
+paths:
+  temp_dir: "assets/temp"
+  fonts_dir: "assets/fonts"
+  logs_dir: "logs"
+  font_file: "assets/fonts/Roboto-Medium.ttf"
+
+# Logging
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  file: "logs/automation.log"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  max_bytes: 10485760  # 10MB
+  backup_count: 10  # Used by log pruning to keep last N sessions
+
+# Safety & Limits
+limits:
+  max_question_length: 500  # characters
+  max_option_length: 100
+  max_explanation_length: 1000
+  upload_timeout: 300  # seconds
+  request_timeout: 60

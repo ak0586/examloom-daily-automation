@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.pytest_cache/
+
+# Environment Variables & Secrets (CRITICAL)
+.env
+client_secrets.json
+youtube_credentials.json
+test.py
+setup.sh
+
+# Logs
+logs/
+*.log
+
+# Generated Content & Temp Files
+assets/temp/
+video/
+*.mp4
+*.png
+
+# IDEs
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
