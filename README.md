@@ -1,12 +1,9 @@
-# 🎬 Educational Video Automation Pipeline v2.0
+# 🎬 Educational Video Automation Pipeline
 
 ## Single JSON Design - Self-Contained Questions
 
 Fully automated system for creating and publishing educational quiz videos using a **single, self-contained JSON file** where each question includes all metadata (caption, description, hashtags).
 
----
-
-## 🆕 What's New in v2.0
 
 ### Single Source of Truth
 - **One JSON file** (`questions.json`) contains everything
