@@ -2,7 +2,7 @@ name: Daily Educational Video
 
 permissions:
   contents: write
-  
+
 on:
   schedule:
     # Morning upload: 08:00 AM IST (02:30 UTC)
@@ -11,31 +11,45 @@ on:
     # Evening upload: 08:00 PM IST (14:30 UTC)
     - cron: '30 14 * * *'
 
-  workflow_dispatch:  # Manual trigger
+  workflow_dispatch:
 
 jobs:
   run-pipeline:
     runs-on: ubuntu-latest
-    
+
     steps:
+    # 1️⃣ Checkout repository
     - name: Checkout code
       uses: actions/checkout@v3
 
+    # 2️⃣ Setup Python
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.10'
 
+    # 3️⃣ Cache pip dependencies (🔥 THIS IS THE KEY STEP)
+    - name: Cache pip dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+
+    # 4️⃣ Install system dependencies (FFmpeg)
     - name: Install system dependencies (FFmpeg)
       run: |
         sudo apt-get update
         sudo apt-get install -y ffmpeg
 
+    # 5️⃣ Install Python dependencies (uses cache)
     - name: Install Python dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
+    # 6️⃣ Recreate credential files from secrets
     - name: Create credentials files from Secrets
       env:
         CLIENT_SECRETS_BASE64: ${{ secrets.CLIENT_SECRETS_BASE64 }}
@@ -44,6 +58,7 @@ jobs:
         echo "$CLIENT_SECRETS_BASE64" | base64 -d > client_secrets.json
         echo "$YOUTUBE_CREDENTIALS_BASE64" | base64 -d > youtube_credentials.json
 
+    # 7️⃣ Run automation pipeline
     - name: Run Automation Pipeline
       env:
         FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
@@ -53,6 +68,7 @@ jobs:
         RUN_MODE: scheduled
       run: python main.py
 
+    # 8️⃣ Commit and push used questions log
     - name: Commit and Push Used Questions Log
       run: |
         git config --global user.name 'GitHub Actions Bot'
