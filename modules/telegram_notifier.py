@@ -138,6 +138,31 @@ class TelegramNotifier:
                     logger.error(f"Failed to send Telegram message after {max_retries} attempts: {e}")
                     return False
     
+    def send_alert(self, title: str, message: str) -> bool:
+        """
+        Send a generic alert message.
+        
+        Args:
+            title: Alert title
+            message: Alert content
+            
+        Returns:
+            True if sent successfully
+        """
+        if not self.enabled:
+            return False
+            
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        
+        formatted_msg = (
+            f"⚠️ *{title}*\n"
+            "━━━━━━━━━━━━━━━━━━\n\n"
+            f"{message}\n\n"
+            f"🕒 Time: {timestamp}"
+        )
+        
+        return self._send_message(formatted_msg)
+
     def send_error_alert(self, error_message: str) -> bool:
         """
         Send error alert.

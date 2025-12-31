@@ -64,6 +64,48 @@ class UploadManager:
         
         return results
     
+    def verify_facebook_token(self) -> Optional[int]:
+        """
+        Check Facebook Access Token expiration.
+        
+        Returns:
+            Days remaining until expiration, or None if check fails/infinite.
+        """
+        if not self.fb_config['enabled']:
+            return None
+            
+        try:
+            access_token = self.fb_config['access_token']
+            
+            # Use debug_token endpoint
+            url = "https://graph.facebook.com/debug_token"
+            params = {
+                'input_token': access_token,
+                'access_token': access_token 
+            }
+            
+            response = requests.get(url, params=params)
+            data = response.json()
+            
+            if 'data' in data and 'expires_at' in data['data']:
+                expires_at = data['data']['expires_at']
+                
+                # expires_at = 0 means never expires
+                if expires_at == 0:
+                    return 9999
+                
+                # Calculate days remaining
+                from datetime import datetime
+                expiry_date = datetime.fromtimestamp(expires_at)
+                days_remaining = (expiry_date - datetime.now()).days
+                return days_remaining
+            
+            return None
+            
+        except Exception as e:
+            logger.warning(f"Could not verify Facebook token expiry: {e}")
+            return None
+
     def _upload_facebook(self, video_path: str, caption: str,
                          description: str) -> Dict[str, Any]:
         """

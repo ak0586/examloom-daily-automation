@@ -156,10 +156,23 @@ def main():
         telegram_notifier = TelegramNotifier(config)
         
         # Get usage statistics
+        # Get usage statistics
         stats = question_selector.get_stats()
         logger.info(f"Question bank stats: {stats['used']}/{stats['total']} used "
                    f"({stats['percentage_used']}%)")
         logger.info(f"Remaining by difficulty: {stats['remaining_by_difficulty']}")
+        
+        # Check Facebook Token Expiry
+        days_remaining = upload_manager.verify_facebook_token()
+        if days_remaining is not None:
+            logger.info(f"Facebook Token Status: {days_remaining} days remaining")
+            if days_remaining <= 5:
+                logger.warning(f"Facebook token expires in {days_remaining} days!")
+                telegram_notifier.send_alert(
+                    "Facebook Token Expiring Soon",
+                    f"⚠️ Your Facebook Access Token will expire in {days_remaining} days.\n"
+                    "Please regenerate it to avoid upload failures."
+                )
         
         # Step 1: Select question (with all metadata)
         logger.info("\n[Step 1/6] Selecting question with metadata...")
