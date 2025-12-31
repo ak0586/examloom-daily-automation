@@ -88,6 +88,7 @@ To add background music to your videos:
 1.  Place an MP3 file in the `assets/music/` directory.
 2.  The system will automatically detect the first `.mp3` file found and loop it as background music.
     - Effect: The audio loops infinitely to match the video duration.
+    - **Attribution**: The system automatically appends the required Creative Commons license to the video description.
     - Note: If no file is found, the video will be created without background music.
 
 ### 3. YouTube Authentication (Local Run)

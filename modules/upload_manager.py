@@ -42,16 +42,24 @@ class UploadManager:
         """
         results = {}
         
+        # Append music license
+        music_license = (
+            "\n\nMusic: Life of Riley – Kevin MacLeod\n"
+            "Licensed under Creative Commons: Attribution 3.0\n"
+            "http://creativecommons.org/licenses/by/3.0/"
+        )
+        full_description = description + music_license
+        
         # Upload to Facebook
         if self.fb_config['enabled']:
             results['facebook'] = self._upload_facebook(
-                video_path, caption, description
+                video_path, caption, full_description
             )
         
         # Upload to YouTube
         if self.yt_config['enabled']:
             results['youtube'] = self._upload_youtube(
-                video_path, caption, description
+                video_path, caption, full_description
             )
         
         return results
