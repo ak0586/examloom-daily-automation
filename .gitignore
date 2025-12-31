@@ -11,6 +11,9 @@ client_secrets.json
 youtube_credentials.json
 test.py
 setup.sh
+verification_result.txt
+verify_description.py
+generate_secrets.py
 
 # Logs
 # logs/
