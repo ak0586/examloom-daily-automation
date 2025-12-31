@@ -92,8 +92,9 @@ telegram:
 # Automation Schedule
 schedule:
   times:
-    - "09:00"  # 9 AM
-    - "21:00"  # 9 PM
+    - "02:30"  # 8 AM IST
+    - "07:30"  # 1 PM IST
+    - "14:00"  # 7:30 PM IST
   timezone: "UTC"
 
 # File Paths

@@ -8,8 +8,11 @@ on:
     # Morning upload: 08:00 AM IST (02:30 UTC)
     - cron: '30 2 * * *'
 
-    # Evening upload: 08:00 PM IST (14:30 UTC)
-    - cron: '30 14 * * *'
+    # Afternoon upload: 01:00 PM IST (07:30 UTC)
+    - cron: '30 7 * * *'
+
+    # Evening upload: 07:30 PM IST (14:00 UTC)
+    - cron: '0 14 * * *'
 
   workflow_dispatch:
 
