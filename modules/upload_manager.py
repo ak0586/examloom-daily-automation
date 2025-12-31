@@ -124,7 +124,8 @@ class UploadManager:
                 'video_id': video_id,
                 'description': description,
                 'title': caption,
-                'access_token': access_token
+                'access_token': access_token,
+                'video_state': 'PUBLISHED'
             }
             
             finish_response = requests.post(init_url, data=finish_data)
