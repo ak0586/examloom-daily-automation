@@ -43,8 +43,17 @@ class VideoCreator:
         output_path = Path(output_path)
         output_path.parent.mkdir(parents=True, exist_ok=True)
         
+        # Search for background music
+        music_dir = Path("assets/music")
+        audio_path = None
+        if music_dir.exists():
+            mp3_files = list(music_dir.glob("*.mp3"))
+            if mp3_files:
+                audio_path = str(mp3_files[0])
+                logger.info(f"Found background music: {audio_path}")
+        
         # Build FFmpeg command
-        cmd = self._build_ffmpeg_command(image_path, question_id, str(output_path))
+        cmd = self._build_ffmpeg_command(image_path, question_id, str(output_path), audio_path)
         
         try:
             # Run FFmpeg
@@ -63,9 +72,9 @@ class VideoCreator:
             raise
     
     def _build_ffmpeg_command(self, image_path: str, question_id: int,
-                            output_path: str) -> list:
+                            output_path: str, audio_path: str = None) -> list:
         """
-        Build FFmpeg command with zoom effect only (no overlays).
+        Build FFmpeg command with zoom effect and optional background music.
         
         Returns:
             List of command arguments
@@ -87,16 +96,34 @@ class VideoCreator:
             # Image already at correct size (1080x1920), no scaling needed
             # Zoom effect
             f"zoompan=z='if(lte(zoom,1.0),{zoom_start},{zoom_start}+"
-            f"(on/{duration * fps})*({zoom_end}-{zoom_start}))':d={duration * fps}:s={width}x{height}"
+            f"(on/{duration * fps})*({zoom_end}-{zoom_start}))':d={duration * fps}:s={width}x{height}[v]"
         )
         
         cmd = [
             'ffmpeg',
             '-y',  # Overwrite output
             '-loop', '1',  # Loop input image
-            '-i', image_path,  # Input image
+            '-i', image_path,  # Input 0: Image
+        ]
+
+        # Add audio input if exists
+        if audio_path:
+            cmd.extend([
+                '-stream_loop', '-1',  # Loop audio infinitely
+                '-i', audio_path,      # Input 1: Audio
+            ])
+
+        cmd.extend([
             '-filter_complex', filter_complex,
-            '-t', str(duration),  # Duration
+            '-map', '[v]',        # Map processed video
+        ])
+
+        if audio_path:
+            cmd.extend(['-map', '1:a']) # Map audio stream from input 1
+            cmd.extend(['-c:a', 'aac', '-b:a', '192k']) # Audio encoding
+
+        cmd.extend([
+            '-t', str(duration),  # Duration (cuts the looped audio)
             '-r', str(fps),  # Frame rate
             '-c:v', self.video_config['codec'],  # Video codec
             '-preset', self.video_config['preset'],  # Encoding preset
@@ -104,7 +131,7 @@ class VideoCreator:
             '-pix_fmt', 'yuv420p',  # Pixel format (for compatibility)
             '-movflags', '+faststart',  # Optimize for streaming
             output_path
-        ]
+        ])
         
         return cmd
         

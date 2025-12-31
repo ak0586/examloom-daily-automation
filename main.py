@@ -192,23 +192,9 @@ def main():
         image_generator.generate(question, image_path)
         logger.info(f"Image created: {image_path}")
         
-        # Step 4: Create video
-        logger.info("\n[Step 4/6] Creating video...")
-        video_path = f"{temp_dir}/video_{question['id']}.mp4"
-        video_creator.create_video(image_path, question['id'], video_path)
-        
-        # Verify video
-        if not video_creator.verify_video(video_path):
-            raise Exception("Video verification failed")
-        
-        logger.info(f"Video created: {video_path}")
-        
-
         # # Step 4: Create video
         # logger.info("\n[Step 4/6] Creating video...")
-        # video_dir = "video"
-        # Path(video_dir).mkdir(parents=True, exist_ok=True)
-        # video_path = f"{video_dir}/video_{question['id']}.mp4"
+        # video_path = f"{temp_dir}/video_{question['id']}.mp4"
         # video_creator.create_video(image_path, question['id'], video_path)
         
         # # Verify video
@@ -216,7 +202,21 @@ def main():
         #     raise Exception("Video verification failed")
         
         # logger.info(f"Video created: {video_path}")
-        # '''
+        
+
+        # Step 4: Create video
+        logger.info("\n[Step 4/6] Creating video...")
+        video_dir = "video"
+        Path(video_dir).mkdir(parents=True, exist_ok=True)
+        video_path = f"{video_dir}/video_{question['id']}.mp4"
+        video_creator.create_video(image_path, question['id'], video_path)
+        
+        # Verify video
+        if not video_creator.verify_video(video_path):
+            raise Exception("Video verification failed")
+        
+        logger.info(f"Video created: {video_path}")
+        '''
         # Step 5: Upload to platforms
         logger.info("\n[Step 5/6] Uploading to social media...")
         logger.info(f"Using caption: {caption}")
@@ -245,7 +245,7 @@ def main():
             logger.info(f"Question {question['id']} marked as used")
         else:
             logger.warning("All uploads failed - question not marked as used")
-        # '''        
+        '''        
         # Clean up temporary files
         logger.info("\nCleaning up temporary files...")
         cleanup_temp_files(temp_dir)

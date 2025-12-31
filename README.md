@@ -83,7 +83,14 @@ TELEGRAM_BOT_TOKEN=your_bot_token
 TELEGRAM_CHAT_ID=your_chat_id
 ```
 
-### 2. YouTube Authentication (Local Run)
+### 2. Audio Configuration (Optional)
+To add background music to your videos:
+1.  Place an MP3 file in the `assets/music/` directory.
+2.  The system will automatically detect the first `.mp3` file found and loop it as background music.
+    - Effect: The audio loops infinitely to match the video duration.
+    - Note: If no file is found, the video will be created without background music.
+
+### 3. YouTube Authentication (Local Run)
 The first time you run the script locally, it will open a browser to authenticate with YouTube. This generates `client_secrets.json` (input) and `youtube_credentials.json` (output session).
 
 ---
