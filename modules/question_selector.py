@@ -139,14 +139,28 @@ class QuestionSelector:
         Returns:
             Complete description with hashtags
         """
-        descriptions = question['descriptions']
-        if index >= len(descriptions):
-            index = 0
+        # Generate description dynamically to place Answer AFTER Explanation
+        # as per user request (to avoid spoilers on Facebook Reels)
         
-        description = descriptions[index]
+        explanation = question['explanation']
+        answer_letter = question['answer']
+        
+        # Get answer text from options
+        options = question['options']
+        answer_index = ord(answer_letter) - ord('A')
+        answer_text = options[answer_index] if 0 <= answer_index < len(options) else ""
+        
+        # Construct the core message
+        # Format: Explanation -> Answer -> CTA
+        content = (
+            f"📝 Solution:\n{explanation}\n\n"
+            f"✅ Correct Answer: {answer_letter} ({answer_text})\n\n"
+            f"Follow for daily practice! 📚"
+        )
+        
         hashtags = ' '.join(question['hashtags'])
         
-        return f"{description}\n\n{hashtags}"
+        return f"{content}\n\n{hashtags}"
     
     def mark_as_used(self, question_id: int) -> None:
         """

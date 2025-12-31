@@ -42,14 +42,14 @@ image:
 overlays:
   header:
     text: "🧠 {type} Practice | Question #{id}"
-    font_size: 70
+    font_size: 50
     color: "#FFFFFF"
     background: "#283593"  # Premium Indigo Blue
     height: 200
   
   footer:
     text: "⏸️ Pause & Comment Your Answer 👇"
-    font_size: 60
+    font_size: 40
     color: "#FFFFFF"
     background: "#283593"  # Premium Indigo Blue
     height: 200
