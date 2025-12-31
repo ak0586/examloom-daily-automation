@@ -153,3 +153,187 @@ Cleaning up temporary files...
 2025-12-31 12:42:58,229 - __main__ - INFO - Difficulty: easy
 2025-12-31 12:42:58,229 - __main__ - INFO - Caption used: Quick discount calculation! 💰...
 2025-12-31 12:42:58,230 - __main__ - INFO - ============================================================
+2025-12-31 18:46:23,802 - __main__ - INFO - ============================================================
+2025-12-31 18:46:23,802 - __main__ - INFO - Educational Video Automation Pipeline v2.0
+2025-12-31 18:46:23,802 - __main__ - INFO - Single JSON Design - Self-Contained Questions
+2025-12-31 18:46:23,802 - __main__ - INFO - ============================================================
+2025-12-31 18:46:23,803 - __main__ - INFO - Initializing modules...
+2025-12-31 18:46:23,840 - modules.question_selector - INFO - Loaded 4000 questions from data\questions.json
+2025-12-31 18:46:23,841 - modules.question_selector - INFO - Loaded 2 used question IDs
+2025-12-31 18:46:23,843 - modules.question_selector - INFO - All questions validated successfully
+2025-12-31 18:46:23,844 - modules.image_generator - WARNING - Custom font not found, using default with larger sizes
+2025-12-31 18:46:23,852 - modules.image_generator - INFO - Loaded system font: segoeui.ttf
+2025-12-31 18:46:23,854 - __main__ - INFO - Question bank stats: 2/4000 used (0.05%)
+2025-12-31 18:46:23,854 - __main__ - INFO - Remaining by difficulty: {'medium': 1334, 'hard': 1328, 'easy': 1336}
+2025-12-31 18:46:25,437 - __main__ - INFO - Facebook Token Status: 59 days remaining
+2025-12-31 18:46:25,437 - __main__ - INFO - 
+[Step 1/6] Selecting question with metadata...
+2025-12-31 18:46:25,437 - modules.question_selector - INFO - Selected question ID: 3
+2025-12-31 18:46:25,438 - __main__ - INFO - Selected: Question ID 3
+2025-12-31 18:46:25,438 - __main__ - INFO - Difficulty: medium
+2025-12-31 18:46:25,438 - __main__ - INFO - Question: A cistern can be filled by two pipes in 20 and 30 ...
+2025-12-31 18:46:25,438 - __main__ - INFO - 
+[Step 2/6] Extracting caption and description...
+2025-12-31 18:46:25,438 - __main__ - INFO - Caption: Pipes and cisterns challenge! 💧
+2025-12-31 18:46:25,438 - __main__ - INFO - Description length: 298 chars
+2025-12-31 18:46:25,438 - __main__ - INFO - Hashtags count: 10
+2025-12-31 18:46:25,439 - __main__ - INFO - 
+[Step 3/6] Generating question image...
+2025-12-31 18:46:25,439 - modules.image_generator - INFO - Generating image for question ID: 3
+2025-12-31 18:46:25,457 - modules.image_generator - INFO - Dynamic Sizing: Q=65px (was 70), Opt=55px (was 60)
+2025-12-31 18:46:25,520 - modules.image_generator - INFO - Image saved to: assets\temp\question_3.png
+2025-12-31 18:46:25,521 - __main__ - INFO - Image created: assets/temp/question_3.png
+2025-12-31 18:46:25,521 - __main__ - INFO - 
+[Step 4/6] Creating video...
+2025-12-31 18:46:25,521 - modules.video_creator - INFO - Creating video for question ID: 3
+2025-12-31 18:46:25,522 - modules.video_creator - INFO - Found background music: assets\music\Life of Riley - Kevin MacLeod.mp3
+2025-12-31 18:46:27,771 - modules.video_creator - INFO - Video created successfully: video\video_3.mp4
+2025-12-31 18:46:27,835 - modules.video_creator - INFO - Video verification: 20.000000,600
+2025-12-31 18:46:27,836 - __main__ - INFO - Video created: video/video_3.mp4
+2025-12-31 18:46:27,836 - __main__ - INFO - 
+Cleaning up temporary files...
+2025-12-31 18:46:27,837 - __main__ - INFO - 
+============================================================
+2025-12-31 18:46:27,837 - __main__ - INFO - Pipeline execution completed successfully!
+2025-12-31 18:46:27,837 - __main__ - INFO - Question ID: 3
+2025-12-31 18:46:27,837 - __main__ - INFO - Difficulty: medium
+2025-12-31 18:46:27,838 - __main__ - INFO - Caption used: Pipes and cisterns challenge! ...
+2025-12-31 18:46:27,838 - __main__ - INFO - ============================================================
+2025-12-31 18:48:57,903 - __main__ - INFO - ============================================================
+2025-12-31 18:48:57,903 - __main__ - INFO - Educational Video Automation Pipeline v2.0
+2025-12-31 18:48:57,903 - __main__ - INFO - Single JSON Design - Self-Contained Questions
+2025-12-31 18:48:57,904 - __main__ - INFO - ============================================================
+2025-12-31 18:48:57,904 - __main__ - INFO - Initializing modules...
+2025-12-31 18:48:57,941 - modules.question_selector - INFO - Loaded 4000 questions from data\questions.json
+2025-12-31 18:48:57,941 - modules.question_selector - INFO - Loaded 2 used question IDs
+2025-12-31 18:48:57,943 - modules.question_selector - INFO - All questions validated successfully
+2025-12-31 18:48:57,944 - modules.image_generator - WARNING - Custom font not found, using default with larger sizes
+2025-12-31 18:48:57,946 - modules.image_generator - INFO - Loaded system font: segoeui.ttf
+2025-12-31 18:48:57,947 - __main__ - INFO - Question bank stats: 2/4000 used (0.05%)
+2025-12-31 18:48:57,947 - __main__ - INFO - Remaining by difficulty: {'medium': 1334, 'hard': 1328, 'easy': 1336}
+2025-12-31 18:48:58,993 - __main__ - INFO - Facebook Token Status: 59 days remaining
+2025-12-31 18:48:58,993 - __main__ - INFO - 
+[Step 1/6] Selecting question with metadata...
+2025-12-31 18:48:58,994 - modules.question_selector - INFO - Selected question ID: 3
+2025-12-31 18:48:58,994 - __main__ - INFO - Selected: Question ID 3
+2025-12-31 18:48:58,994 - __main__ - INFO - Difficulty: medium
+2025-12-31 18:48:58,994 - __main__ - INFO - Question: A cistern can be filled by two pipes in 20 and 30 ...
+2025-12-31 18:48:58,995 - __main__ - INFO - 
+[Step 2/6] Extracting caption and description...
+2025-12-31 18:48:58,995 - __main__ - INFO - Caption: Pipes and cisterns challenge! 💧
+2025-12-31 18:48:58,995 - __main__ - INFO - Description length: 298 chars
+2025-12-31 18:48:58,995 - __main__ - INFO - Hashtags count: 10
+2025-12-31 18:48:58,995 - __main__ - INFO - 
+[Step 3/6] Generating question image...
+2025-12-31 18:48:58,995 - modules.image_generator - INFO - Generating image for question ID: 3
+2025-12-31 18:48:59,011 - modules.image_generator - INFO - Dynamic Sizing: Q=65px (was 70), Opt=55px (was 60)
+2025-12-31 18:48:59,062 - modules.image_generator - INFO - Image saved to: assets\temp\question_3.png
+2025-12-31 18:48:59,063 - __main__ - INFO - Image created: assets/temp/question_3.png
+2025-12-31 18:48:59,063 - __main__ - INFO - 
+[Step 4/6] Creating video...
+2025-12-31 18:48:59,064 - modules.video_creator - INFO - Creating video for question ID: 3
+2025-12-31 18:48:59,064 - modules.video_creator - INFO - Found background music: assets\music\Life of Riley - Kevin MacLeod.mp3
+2025-12-31 18:49:01,294 - modules.video_creator - INFO - Video created successfully: video\video_3.mp4
+2025-12-31 18:49:01,343 - modules.video_creator - INFO - Video verification: 20.000000,600
+2025-12-31 18:49:01,344 - __main__ - INFO - Video created: video/video_3.mp4
+2025-12-31 18:49:01,344 - __main__ - INFO - 
+Cleaning up temporary files...
+2025-12-31 18:49:01,345 - __main__ - INFO - 
+============================================================
+2025-12-31 18:49:01,345 - __main__ - INFO - Pipeline execution completed successfully!
+2025-12-31 18:49:01,345 - __main__ - INFO - Question ID: 3
+2025-12-31 18:49:01,345 - __main__ - INFO - Difficulty: medium
+2025-12-31 18:49:01,346 - __main__ - INFO - Caption used: Pipes and cisterns challenge! ...
+2025-12-31 18:49:01,346 - __main__ - INFO - ============================================================
+2025-12-31 18:49:19,615 - __main__ - INFO - ============================================================
+2025-12-31 18:49:19,616 - __main__ - INFO - Educational Video Automation Pipeline v2.0
+2025-12-31 18:49:19,616 - __main__ - INFO - Single JSON Design - Self-Contained Questions
+2025-12-31 18:49:19,616 - __main__ - INFO - ============================================================
+2025-12-31 18:49:19,616 - __main__ - INFO - Initializing modules...
+2025-12-31 18:49:19,650 - modules.question_selector - INFO - Loaded 4000 questions from data\questions.json
+2025-12-31 18:49:19,650 - modules.question_selector - INFO - Loaded 2 used question IDs
+2025-12-31 18:49:19,653 - modules.question_selector - INFO - All questions validated successfully
+2025-12-31 18:49:19,653 - modules.image_generator - WARNING - Custom font not found, using default with larger sizes
+2025-12-31 18:49:19,655 - modules.image_generator - INFO - Loaded system font: segoeui.ttf
+2025-12-31 18:49:19,657 - __main__ - INFO - Question bank stats: 2/4000 used (0.05%)
+2025-12-31 18:49:19,657 - __main__ - INFO - Remaining by difficulty: {'medium': 1334, 'hard': 1328, 'easy': 1336}
+2025-12-31 18:49:20,701 - __main__ - INFO - Facebook Token Status: 59 days remaining
+2025-12-31 18:49:20,702 - __main__ - INFO - 
+[Step 1/6] Selecting question with metadata...
+2025-12-31 18:49:20,703 - modules.question_selector - INFO - Selected question ID: 3
+2025-12-31 18:49:20,703 - __main__ - INFO - Selected: Question ID 3
+2025-12-31 18:49:20,703 - __main__ - INFO - Difficulty: medium
+2025-12-31 18:49:20,703 - __main__ - INFO - Question: A cistern can be filled by two pipes in 20 and 30 ...
+2025-12-31 18:49:20,703 - __main__ - INFO - 
+[Step 2/6] Extracting caption and description...
+2025-12-31 18:49:20,704 - __main__ - INFO - Caption: Pipes and cisterns challenge! 💧
+2025-12-31 18:49:20,704 - __main__ - INFO - Description length: 298 chars
+2025-12-31 18:49:20,704 - __main__ - INFO - Hashtags count: 10
+2025-12-31 18:49:20,704 - __main__ - INFO - 
+[Step 3/6] Generating question image...
+2025-12-31 18:49:20,705 - modules.image_generator - INFO - Generating image for question ID: 3
+2025-12-31 18:49:20,719 - modules.image_generator - INFO - Dynamic Sizing: Q=65px (was 70), Opt=55px (was 60)
+2025-12-31 18:49:20,772 - modules.image_generator - INFO - Image saved to: assets\temp\question_3.png
+2025-12-31 18:49:20,773 - __main__ - INFO - Image created: assets/temp/question_3.png
+2025-12-31 18:49:20,774 - __main__ - INFO - 
+[Step 4/6] Creating video...
+2025-12-31 18:49:20,774 - modules.video_creator - INFO - Creating video for question ID: 3
+2025-12-31 18:49:20,775 - modules.video_creator - INFO - Found background music: assets\music\Life of Riley - Kevin MacLeod.mp3
+2025-12-31 18:49:22,808 - modules.video_creator - INFO - Video created successfully: video\video_3.mp4
+2025-12-31 18:49:22,849 - modules.video_creator - INFO - Video verification: 20.000000,600
+2025-12-31 18:49:22,850 - __main__ - INFO - Video created: video/video_3.mp4
+2025-12-31 18:49:22,850 - __main__ - INFO - 
+Cleaning up temporary files...
+2025-12-31 18:49:22,850 - __main__ - INFO - 
+============================================================
+2025-12-31 18:49:22,851 - __main__ - INFO - Pipeline execution completed successfully!
+2025-12-31 18:49:22,851 - __main__ - INFO - Question ID: 3
+2025-12-31 18:49:22,851 - __main__ - INFO - Difficulty: medium
+2025-12-31 18:49:22,851 - __main__ - INFO - Caption used: Pipes and cisterns challenge! ...
+2025-12-31 18:49:22,851 - __main__ - INFO - ============================================================
+2025-12-31 18:51:30,891 - __main__ - INFO - ============================================================
+2025-12-31 18:51:30,891 - __main__ - INFO - Educational Video Automation Pipeline v2.0
+2025-12-31 18:51:30,892 - __main__ - INFO - Single JSON Design - Self-Contained Questions
+2025-12-31 18:51:30,892 - __main__ - INFO - ============================================================
+2025-12-31 18:51:30,892 - __main__ - INFO - Initializing modules...
+2025-12-31 18:51:30,924 - modules.question_selector - INFO - Loaded 4000 questions from data\questions.json
+2025-12-31 18:51:30,924 - modules.question_selector - INFO - Loaded 2 used question IDs
+2025-12-31 18:51:30,926 - modules.question_selector - INFO - All questions validated successfully
+2025-12-31 18:51:30,927 - modules.image_generator - WARNING - Custom font not found, using default with larger sizes
+2025-12-31 18:51:30,934 - modules.image_generator - INFO - Loaded system font: seguiemj.ttf
+2025-12-31 18:51:30,936 - __main__ - INFO - Question bank stats: 2/4000 used (0.05%)
+2025-12-31 18:51:30,936 - __main__ - INFO - Remaining by difficulty: {'medium': 1334, 'hard': 1328, 'easy': 1336}
+2025-12-31 18:51:31,954 - __main__ - INFO - Facebook Token Status: 59 days remaining
+2025-12-31 18:51:31,954 - __main__ - INFO - 
+[Step 1/6] Selecting question with metadata...
+2025-12-31 18:51:31,955 - modules.question_selector - INFO - Selected question ID: 3
+2025-12-31 18:51:31,955 - __main__ - INFO - Selected: Question ID 3
+2025-12-31 18:51:31,955 - __main__ - INFO - Difficulty: medium
+2025-12-31 18:51:31,955 - __main__ - INFO - Question: A cistern can be filled by two pipes in 20 and 30 ...
+2025-12-31 18:51:31,955 - __main__ - INFO - 
+[Step 2/6] Extracting caption and description...
+2025-12-31 18:51:31,956 - __main__ - INFO - Caption: Pipes and cisterns challenge! 💧
+2025-12-31 18:51:31,956 - __main__ - INFO - Description length: 298 chars
+2025-12-31 18:51:31,956 - __main__ - INFO - Hashtags count: 10
+2025-12-31 18:51:31,956 - __main__ - INFO - 
+[Step 3/6] Generating question image...
+2025-12-31 18:51:31,956 - modules.image_generator - INFO - Generating image for question ID: 3
+2025-12-31 18:51:31,975 - modules.image_generator - INFO - Dynamic Sizing: Q=65px (was 70), Opt=55px (was 60)
+2025-12-31 18:51:32,027 - modules.image_generator - INFO - Image saved to: assets\temp\question_3.png
+2025-12-31 18:51:32,028 - __main__ - INFO - Image created: assets/temp/question_3.png
+2025-12-31 18:51:32,028 - __main__ - INFO - 
+[Step 4/6] Creating video...
+2025-12-31 18:51:32,029 - modules.video_creator - INFO - Creating video for question ID: 3
+2025-12-31 18:51:32,029 - modules.video_creator - INFO - Found background music: assets\music\Life of Riley - Kevin MacLeod.mp3
+2025-12-31 18:51:34,121 - modules.video_creator - INFO - Video created successfully: video\video_3.mp4
+2025-12-31 18:51:34,155 - modules.video_creator - INFO - Video verification: 20.000000,600
+2025-12-31 18:51:34,155 - __main__ - INFO - Video created: video/video_3.mp4
+2025-12-31 18:51:34,155 - __main__ - INFO - 
+Cleaning up temporary files...
+2025-12-31 18:51:34,156 - __main__ - INFO - 
+============================================================
+2025-12-31 18:51:34,156 - __main__ - INFO - Pipeline execution completed successfully!
+2025-12-31 18:51:34,156 - __main__ - INFO - Question ID: 3
+2025-12-31 18:51:34,157 - __main__ - INFO - Difficulty: medium
+2025-12-31 18:51:34,157 - __main__ - INFO - Caption used: Pipes and cisterns challenge! ...
+2025-12-31 18:51:34,157 - __main__ - INFO - ============================================================

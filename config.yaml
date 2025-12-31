@@ -48,7 +48,7 @@ overlays:
     height: 200
   
   footer:
-    text: "⏸️ Pause & Comment Your Answer 👇"
+    text: "Pause & Comment Your Answer 👇\nLike, Share, Subscribe & Follow ❤️"
     font_size: 40
     color: "#FFFFFF"
     background: "#283593"  # Premium Indigo Blue

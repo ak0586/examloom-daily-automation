@@ -54,7 +54,7 @@ class ImageGenerator:
                 logger.warning("Custom font not found, using default with larger sizes")
                 try:
                     # Try common system fonts on Windows/Linux
-                    for font_name in ['segoeui.ttf', 'calibri.ttf', 'verdana.ttf', 'arial.ttf', 'Arial.ttf', 'DejaVuSans.ttf', 'Roboto-Regular.ttf']:
+                    for font_name in ['seguiemj.ttf', 'segoeui.ttf', 'calibri.ttf', 'verdana.ttf', 'arial.ttf', 'Arial.ttf', 'DejaVuSans.ttf', 'Roboto-Regular.ttf']:
                         try:
                             self.question_font = ImageFont.truetype(
                                 font_name,
@@ -221,7 +221,7 @@ class ImageGenerator:
             
         img.paste(footer_overlay, (0, footer_y_pos), footer_overlay)
         
-        footer_text = "⏸️ Pause & Comment Your Answer 👇"
+        footer_text = self.config['overlays']['footer'].get('text', "⏸️ Pause & Comment Your Answer 👇")
         try:
             footer_font_size = self.config['overlays']['footer']['font_size']
             if self.active_font_path:
@@ -239,7 +239,7 @@ class ImageGenerator:
         footer_x = (self.width - footer_text_width) // 2
         footer_text_y = footer_y_pos + (footer_height - footer_text_height) // 2 - 10
         
-        draw.text((footer_x, footer_text_y), footer_text, fill='#FFFFFF', font=footer_font)
+        draw.text((footer_x, footer_text_y), footer_text, fill='#FFFFFF', font=footer_font, align='center')
         
         # Save image
         output_path = Path(output_path)

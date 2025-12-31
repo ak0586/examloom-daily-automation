@@ -42,13 +42,14 @@ class UploadManager:
         """
         results = {}
         
-        # Append music license
+        # Append CTA and music license
+        cta_text = "\n\n👉 Please Subscribe & Follow for more! ❤️"
         music_license = (
             "\n\nMusic: Life of Riley – Kevin MacLeod\n"
             "Licensed under Creative Commons: Attribution 3.0\n"
             "http://creativecommons.org/licenses/by/3.0/"
         )
-        full_description = description + music_license
+        full_description = description + cta_text + music_license
         
         # Upload to Facebook
         if self.fb_config['enabled']:
