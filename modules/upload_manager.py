@@ -186,11 +186,15 @@ class UploadManager:
             youtube = build('youtube', 'v3', credentials=creds)
             
             # Prepare video metadata
+            # Sanitize description (YouTube doesn't allow < or >)
+            # Replace with full-width unicode equivalents to preserve meaning
+            safe_description = description.replace('<', '＜').replace('>', '＞')
+            
             # Note: Adding #Shorts in title/description makes it a Short
             body = {
                 'snippet': {
                     'title': title,
-                    'description': description + '\n\n#Shorts',
+                    'description': safe_description + '\n\n#Shorts',
                     'tags': ['shorts', 'education', 'quiz'],
                     'categoryId': self.yt_config['category_id']
                 },
