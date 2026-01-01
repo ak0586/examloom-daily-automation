@@ -79,3 +79,12 @@ jobs:
         git add data/used_questions.log
         git diff --quiet && git diff --staged --quiet || \
           (git commit -m "Update used questions log [skip ci]" && git push)
+
+    # 9️⃣ Upload logs as artifact (Runs always)
+    - name: Upload Logs
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: automation-logs
+        path: logs/
+        retention-days: 5

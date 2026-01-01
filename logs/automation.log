@@ -1,94 +1,4 @@
-2025-12-31 12:17:20,387 - __main__ - INFO - ============================================================
-2025-12-31 12:17:20,388 - __main__ - INFO - Educational Video Automation Pipeline v2.0
-2025-12-31 12:17:20,388 - __main__ - INFO - Single JSON Design - Self-Contained Questions
-2025-12-31 12:17:20,388 - __main__ - INFO - ============================================================
-2025-12-31 12:17:20,388 - __main__ - INFO - Initializing modules...
-2025-12-31 12:17:20,414 - modules.question_selector - INFO - Loaded 2000 questions from data\questions.json
-2025-12-31 12:17:20,431 - modules.question_selector - INFO - Loaded 2 used question IDs
-2025-12-31 12:17:20,432 - modules.question_selector - INFO - All questions validated successfully
-2025-12-31 12:17:20,432 - modules.image_generator - WARNING - Custom font not found, using default with larger sizes
-2025-12-31 12:17:20,440 - modules.image_generator - INFO - Loaded system font: segoeui.ttf
-2025-12-31 12:17:20,440 - __main__ - INFO - Question bank stats: 2/2000 used (0.1%)
-2025-12-31 12:17:20,441 - __main__ - INFO - Remaining by difficulty: {'medium': 666, 'hard': 664, 'easy': 668}
-2025-12-31 12:17:20,441 - __main__ - INFO - 
-[Step 1/6] Selecting question with metadata...
-2025-12-31 12:17:20,441 - modules.question_selector - INFO - Selected question ID: 3
-2025-12-31 12:17:20,441 - __main__ - INFO - Selected: Question ID 3
-2025-12-31 12:17:20,441 - __main__ - INFO - Difficulty: medium
-2025-12-31 12:17:20,442 - __main__ - INFO - Question: A cistern can be filled by two pipes in 20 and 30 ...
-2025-12-31 12:17:20,442 - __main__ - INFO - 
-[Step 2/6] Extracting caption and description...
-2025-12-31 12:17:20,442 - __main__ - INFO - Caption: Pipes and cisterns challenge! 💧
-2025-12-31 12:17:20,442 - __main__ - INFO - Description length: 288 chars
-2025-12-31 12:17:20,442 - __main__ - INFO - Hashtags count: 10
-2025-12-31 12:17:20,442 - __main__ - INFO - 
-[Step 3/6] Generating question image...
-2025-12-31 12:17:20,442 - modules.image_generator - INFO - Generating image for question ID: 3
-2025-12-31 12:17:20,457 - modules.image_generator - INFO - Dynamic Sizing: Q=65px (was 70), Opt=55px (was 60)
-2025-12-31 12:17:20,533 - modules.image_generator - INFO - Image saved to: assets\temp\question_3.png
-2025-12-31 12:17:20,535 - __main__ - INFO - Image created: assets/temp/question_3.png
-2025-12-31 12:17:20,535 - __main__ - INFO - 
-[Step 4/6] Creating video...
-2025-12-31 12:17:20,535 - modules.video_creator - INFO - Creating video for question ID: 3
-2025-12-31 12:17:22,589 - modules.video_creator - INFO - Video created successfully: video\video_3.mp4
-2025-12-31 12:17:22,769 - modules.video_creator - INFO - Video verification: 20.000000,600
-2025-12-31 12:17:22,770 - __main__ - INFO - Video created: video/video_3.mp4
-2025-12-31 12:17:22,770 - __main__ - INFO - 
-Cleaning up temporary files...
-2025-12-31 12:17:22,771 - __main__ - INFO - 
-============================================================
-2025-12-31 12:17:22,771 - __main__ - INFO - Pipeline execution completed successfully!
-2025-12-31 12:17:22,771 - __main__ - INFO - Question ID: 3
-2025-12-31 12:17:22,772 - __main__ - INFO - Difficulty: medium
-2025-12-31 12:17:22,772 - __main__ - INFO - Caption used: Pipes and cisterns challenge! ...
-2025-12-31 12:17:22,772 - __main__ - INFO - ============================================================
-2025-12-31 12:21:23,158 - __main__ - INFO - ============================================================
-2025-12-31 12:21:23,158 - __main__ - INFO - Educational Video Automation Pipeline v2.0
-2025-12-31 12:21:23,159 - __main__ - INFO - Single JSON Design - Self-Contained Questions
-2025-12-31 12:21:23,159 - __main__ - INFO - ============================================================
-2025-12-31 12:21:23,159 - __main__ - INFO - Initializing modules...
-2025-12-31 12:21:23,174 - modules.question_selector - INFO - Loaded 2000 questions from data\questions.json
-2025-12-31 12:21:23,175 - modules.question_selector - INFO - Loaded 2 used question IDs
-2025-12-31 12:21:23,176 - modules.question_selector - INFO - All questions validated successfully
-2025-12-31 12:21:23,177 - modules.image_generator - WARNING - Custom font not found, using default with larger sizes
-2025-12-31 12:21:23,178 - modules.image_generator - INFO - Loaded system font: segoeui.ttf
-2025-12-31 12:21:23,179 - __main__ - INFO - Question bank stats: 2/2000 used (0.1%)
-2025-12-31 12:21:23,179 - __main__ - INFO - Remaining by difficulty: {'medium': 666, 'hard': 664, 'easy': 668}
-2025-12-31 12:21:23,179 - __main__ - INFO - 
-[Step 1/6] Selecting question with metadata...
-2025-12-31 12:21:23,180 - modules.question_selector - INFO - Selected question ID: 3
-2025-12-31 12:21:23,180 - __main__ - INFO - Selected: Question ID 3
-2025-12-31 12:21:23,180 - __main__ - INFO - Difficulty: medium
-2025-12-31 12:21:23,180 - __main__ - INFO - Question: A cistern can be filled by two pipes in 20 and 30 ...
-2025-12-31 12:21:23,180 - __main__ - INFO - 
-[Step 2/6] Extracting caption and description...
-2025-12-31 12:21:23,180 - __main__ - INFO - Caption: Pipes and cisterns challenge! 💧
-2025-12-31 12:21:23,180 - __main__ - INFO - Description length: 288 chars
-2025-12-31 12:21:23,180 - __main__ - INFO - Hashtags count: 10
-2025-12-31 12:21:23,181 - __main__ - INFO - 
-[Step 3/6] Generating question image...
-2025-12-31 12:21:23,181 - modules.image_generator - INFO - Generating image for question ID: 3
-2025-12-31 12:21:23,195 - modules.image_generator - INFO - Dynamic Sizing: Q=65px (was 70), Opt=55px (was 60)
-2025-12-31 12:21:23,239 - modules.image_generator - INFO - Image saved to: assets\temp\question_3.png
-2025-12-31 12:21:23,240 - __main__ - INFO - Image created: assets/temp/question_3.png
-2025-12-31 12:21:23,240 - __main__ - INFO - 
-[Step 4/6] Creating video...
-2025-12-31 12:21:23,241 - modules.video_creator - INFO - Creating video for question ID: 3
-2025-12-31 12:21:23,241 - modules.video_creator - INFO - Found background music: assets\music\Life of Riley - Kevin MacLeod.mp3
-2025-12-31 12:21:25,365 - modules.video_creator - INFO - Video created successfully: video\video_3.mp4
-2025-12-31 12:21:25,409 - modules.video_creator - INFO - Video verification: 20.000000,600
-2025-12-31 12:21:25,409 - __main__ - INFO - Video created: video/video_3.mp4
-2025-12-31 12:21:25,409 - __main__ - INFO - 
-Cleaning up temporary files...
-2025-12-31 12:21:25,410 - __main__ - INFO - 
-============================================================
-2025-12-31 12:21:25,410 - __main__ - INFO - Pipeline execution completed successfully!
-2025-12-31 12:21:25,410 - __main__ - INFO - Question ID: 3
-2025-12-31 12:21:25,410 - __main__ - INFO - Difficulty: medium
-2025-12-31 12:21:25,410 - __main__ - INFO - Caption used: Pipes and cisterns challenge! ...
-2025-12-31 12:21:25,410 - __main__ - INFO - ============================================================
-2025-12-31 12:42:31,257 - __main__ - INFO - ============================================================
-2025-12-31 12:42:31,258 - __main__ - INFO - Educational Video Automation Pipeline v2.0
+Educational Video Automation Pipeline v2.0
 2025-12-31 12:42:31,258 - __main__ - INFO - Single JSON Design - Self-Contained Questions
 2025-12-31 12:42:31,258 - __main__ - INFO - ============================================================
 2025-12-31 12:42:31,258 - __main__ - INFO - Initializing modules...
@@ -337,3 +247,363 @@ Cleaning up temporary files...
 2025-12-31 18:51:34,157 - __main__ - INFO - Difficulty: medium
 2025-12-31 18:51:34,157 - __main__ - INFO - Caption used: Pipes and cisterns challenge! ...
 2025-12-31 18:51:34,157 - __main__ - INFO - ============================================================
+2026-01-01 10:08:04,877 - __main__ - INFO - ============================================================
+2026-01-01 10:08:04,878 - __main__ - INFO - Educational Video Automation Pipeline v2.0
+2026-01-01 10:08:04,878 - __main__ - INFO - Single JSON Design - Self-Contained Questions
+2026-01-01 10:08:04,878 - __main__ - INFO - ============================================================
+2026-01-01 10:08:04,878 - __main__ - INFO - Initializing modules...
+2026-01-01 10:08:04,923 - modules.question_selector - INFO - Loaded 4000 questions from data\questions.json
+2026-01-01 10:08:04,924 - modules.question_selector - INFO - Loaded 3 used question IDs
+2026-01-01 10:08:04,926 - modules.question_selector - INFO - All questions validated successfully
+2026-01-01 10:08:04,926 - modules.image_generator - WARNING - Custom font not found, using default with larger sizes
+2026-01-01 10:08:04,932 - modules.image_generator - INFO - Loaded system font: seguiemj.ttf
+2026-01-01 10:08:04,933 - __main__ - INFO - Question bank stats: 3/4000 used (0.07%)
+2026-01-01 10:08:04,933 - __main__ - INFO - Remaining by difficulty: {'medium': 1333, 'hard': 1328, 'easy': 1336}
+2026-01-01 10:08:10,091 - __main__ - INFO - Facebook Token Status: 59 days remaining
+2026-01-01 10:08:10,092 - __main__ - INFO - 
+[Step 1/6] Selecting question with metadata...
+2026-01-01 10:08:10,093 - modules.question_selector - INFO - Selected question ID: 4
+2026-01-01 10:08:10,093 - __main__ - INFO - Selected: Question ID 4
+2026-01-01 10:08:10,093 - __main__ - INFO - Difficulty: medium
+2026-01-01 10:08:10,094 - __main__ - INFO - Question: In a certain code, FLOWER is written as GMPXFS. Ho...
+2026-01-01 10:08:10,094 - __main__ - INFO - 
+[Step 2/6] Extracting caption and description...
+2026-01-01 10:08:10,094 - __main__ - INFO - Caption: Coding-Decoding puzzle! 🔤
+2026-01-01 10:08:10,094 - __main__ - INFO - Description length: 277 chars
+2026-01-01 10:08:10,094 - __main__ - INFO - Hashtags count: 10
+2026-01-01 10:08:10,095 - __main__ - INFO - 
+[Step 3/6] Generating question image...
+2026-01-01 10:08:10,095 - modules.image_generator - INFO - Generating image for question ID: 4
+2026-01-01 10:08:10,105 - modules.image_generator - INFO - Dynamic Sizing: Q=70px (was 70), Opt=60px (was 60)
+2026-01-01 10:08:10,189 - modules.image_generator - INFO - Image saved to: assets\temp\question_4.png
+2026-01-01 10:08:10,190 - __main__ - INFO - Image created: assets/temp/question_4.png
+2026-01-01 10:08:10,190 - __main__ - INFO - 
+[Step 4/6] Creating video...
+2026-01-01 10:08:10,190 - modules.video_creator - INFO - Creating video for question ID: 4
+2026-01-01 10:08:10,191 - modules.video_creator - INFO - Found background music: assets\music\Life of Riley - Kevin MacLeod.mp3
+2026-01-01 10:08:12,114 - modules.video_creator - INFO - Video created successfully: assets\temp\video_4.mp4
+2026-01-01 10:08:12,159 - modules.video_creator - INFO - Video verification: 20.000000,600
+2026-01-01 10:08:12,159 - __main__ - INFO - Video created: assets/temp/video_4.mp4
+2026-01-01 10:08:12,159 - __main__ - INFO - 
+[Step 5/6] Uploading to social media...
+2026-01-01 10:08:12,159 - __main__ - INFO - Using caption: Coding-Decoding puzzle! 🔤
+2026-01-01 10:08:12,159 - __main__ - INFO - Using description with 10 hashtags
+2026-01-01 10:08:12,159 - modules.upload_manager - INFO - Uploading to Facebook Reels...
+2026-01-01 10:08:15,905 - modules.upload_manager - INFO - Upload session initialized: 1407891324163987
+2026-01-01 10:09:56,619 - modules.upload_manager - INFO - Video file uploaded
+2026-01-01 10:10:01,094 - modules.upload_manager - INFO - Facebook upload response: {'success': True, 'message': 'Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.', 'post_id': '122099822265192349'}
+2026-01-01 10:10:01,095 - modules.upload_manager - INFO - Facebook upload successful
+2026-01-01 10:10:02,104 - modules.upload_manager - INFO - Found linked Instagram account: 17841449471756619
+2026-01-01 10:10:02,959 - modules.upload_manager - WARNING - Could not retrieve Facebook video URL for Instagram upload
+2026-01-01 10:10:02,960 - modules.upload_manager - INFO - Uploading to YouTube Shorts...
+2026-01-01 10:10:04,841 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-01-01 10:10:25,750 - modules.upload_manager - INFO - YouTube upload successful: 1z0N7_mI3XQ
+2026-01-01 10:10:25,751 - __main__ - INFO - Facebook: ✅ Success
+2026-01-01 10:10:25,751 - __main__ - INFO - Instagram: ❌ Failed
+2026-01-01 10:10:25,751 - __main__ - ERROR - Error: No video URL found
+2026-01-01 10:10:25,751 - __main__ - INFO - Youtube: ✅ Success
+2026-01-01 10:10:25,751 - __main__ - INFO - 
+[Step 6/6] Sending Telegram notification...
+2026-01-01 10:10:27,254 - modules.telegram_notifier - WARNING - Telegram send failed (attempt 1/3): 400 Client Error: Bad Request for url: https://api.telegram.org/bot8291679301:AAH18fo_esu6Obmhvl0EfwAEZqC3LHGf-1k/sendMessage. Retrying...
+2026-01-01 10:10:30,893 - modules.telegram_notifier - WARNING - Telegram send failed (attempt 2/3): ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)). Retrying...
+2026-01-01 10:10:33,853 - modules.telegram_notifier - ERROR - Failed to send Telegram message after 3 attempts: 400 Client Error: Bad Request for url: https://api.telegram.org/bot8291679301:AAH18fo_esu6Obmhvl0EfwAEZqC3LHGf-1k/sendMessage
+2026-01-01 10:10:33,854 - modules.question_selector - INFO - Marked question 4 as used
+2026-01-01 10:10:33,854 - __main__ - INFO - Question 4 marked as used
+2026-01-01 10:10:33,854 - __main__ - INFO - 
+Cleaning up temporary files...
+2026-01-01 10:10:33,855 - __main__ - INFO - 
+============================================================
+2026-01-01 10:10:33,855 - __main__ - INFO - Pipeline execution completed successfully!
+2026-01-01 10:10:33,855 - __main__ - INFO - Question ID: 4
+2026-01-01 10:10:33,855 - __main__ - INFO - Difficulty: medium
+2026-01-01 10:10:33,855 - __main__ - INFO - Caption used: Coding-Decoding puzzle! 🔤...
+2026-01-01 10:10:33,855 - __main__ - INFO - ============================================================
+2026-01-01 10:13:15,684 - __main__ - INFO - ============================================================
+2026-01-01 10:13:15,685 - __main__ - INFO - Educational Video Automation Pipeline v2.0
+2026-01-01 10:13:15,685 - __main__ - INFO - Single JSON Design - Self-Contained Questions
+2026-01-01 10:13:15,686 - __main__ - INFO - ============================================================
+2026-01-01 10:13:15,686 - __main__ - INFO - Initializing modules...
+2026-01-01 10:13:15,716 - modules.question_selector - INFO - Loaded 4000 questions from data\questions.json
+2026-01-01 10:13:15,717 - modules.question_selector - INFO - Loaded 4 used question IDs
+2026-01-01 10:13:15,719 - modules.question_selector - INFO - All questions validated successfully
+2026-01-01 10:13:15,719 - modules.image_generator - WARNING - Custom font not found, using default with larger sizes
+2026-01-01 10:13:15,722 - modules.image_generator - INFO - Loaded system font: seguiemj.ttf
+2026-01-01 10:13:15,724 - __main__ - INFO - Question bank stats: 4/4000 used (0.1%)
+2026-01-01 10:13:15,724 - __main__ - INFO - Remaining by difficulty: {'hard': 1328, 'easy': 1336, 'medium': 1332}
+2026-01-01 10:13:16,757 - __main__ - INFO - Facebook Token Status: 59 days remaining
+2026-01-01 10:13:16,757 - __main__ - INFO - 
+[Step 1/6] Selecting question with metadata...
+2026-01-01 10:13:16,758 - modules.question_selector - INFO - Selected question ID: 5
+2026-01-01 10:13:16,759 - __main__ - INFO - Selected: Question ID 5
+2026-01-01 10:13:16,759 - __main__ - INFO - Difficulty: hard
+2026-01-01 10:13:16,759 - __main__ - INFO - Question: A sum of money at simple interest amounts to Rs. 8...
+2026-01-01 10:13:16,760 - __main__ - INFO - 
+[Step 2/6] Extracting caption and description...
+2026-01-01 10:13:16,760 - __main__ - INFO - Caption: Simple Interest challenge! 💰
+2026-01-01 10:13:16,760 - __main__ - INFO - Description length: 299 chars
+2026-01-01 10:13:16,761 - __main__ - INFO - Hashtags count: 10
+2026-01-01 10:13:16,761 - __main__ - INFO - 
+[Step 3/6] Generating question image...
+2026-01-01 10:13:16,761 - modules.image_generator - INFO - Generating image for question ID: 5
+2026-01-01 10:13:16,770 - modules.image_generator - INFO - Dynamic Sizing: Q=70px (was 70), Opt=60px (was 60)
+2026-01-01 10:13:16,817 - modules.image_generator - INFO - Image saved to: assets\temp\question_5.png
+2026-01-01 10:13:16,818 - __main__ - INFO - Image created: assets/temp/question_5.png
+2026-01-01 10:13:16,818 - __main__ - INFO - 
+[Step 4/6] Creating video...
+2026-01-01 10:13:16,818 - modules.video_creator - INFO - Creating video for question ID: 5
+2026-01-01 10:13:16,819 - modules.video_creator - INFO - Found background music: assets\music\Life of Riley - Kevin MacLeod.mp3
+2026-01-01 10:13:18,584 - modules.video_creator - INFO - Video created successfully: assets\temp\video_5.mp4
+2026-01-01 10:13:18,613 - modules.video_creator - INFO - Video verification: 20.000000,600
+2026-01-01 10:13:18,613 - __main__ - INFO - Video created: assets/temp/video_5.mp4
+2026-01-01 10:13:18,613 - __main__ - INFO - 
+[Step 5/6] Uploading to social media...
+2026-01-01 10:13:18,613 - __main__ - INFO - Using caption: Simple Interest challenge! 💰
+2026-01-01 10:13:18,614 - __main__ - INFO - Using description with 10 hashtags
+2026-01-01 10:13:18,614 - modules.upload_manager - INFO - Uploading to Facebook Reels...
+2026-01-01 10:13:20,869 - modules.upload_manager - INFO - Upload session initialized: 1885769598720744
+2026-01-01 10:13:36,663 - modules.upload_manager - INFO - Video file uploaded
+2026-01-01 10:13:41,477 - modules.upload_manager - INFO - Facebook upload response: {'success': True, 'message': 'Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.', 'post_id': '122099824533192349'}
+2026-01-01 10:13:41,477 - modules.upload_manager - INFO - Facebook upload successful
+2026-01-01 10:13:42,317 - modules.upload_manager - INFO - Found linked Instagram account: 17841449471756619
+2026-01-01 10:13:42,317 - modules.upload_manager - INFO - Waiting for Facebook video 1885769598720744 to process...
+2026-01-01 10:13:56,213 - modules.upload_manager - INFO - Facebook video source URL retrieved
+2026-01-01 10:13:56,215 - modules.upload_manager - INFO - Uploading to Instagram Reels...
+2026-01-01 10:13:57,712 - modules.upload_manager - INFO - Instagram container created: 18058696553649059
+2026-01-01 10:14:03,714 - modules.upload_manager - ERROR - Instagram upload failed: Instagram transcoding failed: {'status_code': 'ERROR', 'status': 'Error: Media upload has failed with error code 2207076', 'id': '18058696553649059'}
+2026-01-01 10:14:03,717 - modules.upload_manager - INFO - Uploading to YouTube Shorts...
+2026-01-01 10:14:04,059 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-01-01 10:14:10,929 - modules.upload_manager - INFO - YouTube upload successful: R7fT5DC1xu0
+2026-01-01 10:14:10,930 - __main__ - INFO - Facebook: ✅ Success
+2026-01-01 10:14:10,930 - __main__ - INFO - Instagram: ❌ Failed
+2026-01-01 10:14:10,930 - __main__ - ERROR - Error: Instagram transcoding failed: {'status_code': 'ERROR', 'status': 'Error: Media upload has failed with error code 2207076', 'id': '18058696553649059'}
+2026-01-01 10:14:10,930 - __main__ - INFO - Youtube: ✅ Success
+2026-01-01 10:14:10,931 - __main__ - INFO - 
+[Step 6/6] Sending Telegram notification...
+2026-01-01 10:14:15,075 - modules.telegram_notifier - INFO - Telegram notification sent successfully
+2026-01-01 10:14:15,076 - modules.question_selector - INFO - Marked question 5 as used
+2026-01-01 10:14:15,076 - __main__ - INFO - Question 5 marked as used
+2026-01-01 10:14:15,076 - __main__ - INFO - 
+Cleaning up temporary files...
+2026-01-01 10:14:15,077 - __main__ - INFO - 
+============================================================
+2026-01-01 10:14:15,077 - __main__ - INFO - Pipeline execution completed successfully!
+2026-01-01 10:14:15,077 - __main__ - INFO - Question ID: 5
+2026-01-01 10:14:15,077 - __main__ - INFO - Difficulty: hard
+2026-01-01 10:14:15,078 - __main__ - INFO - Caption used: Simple Interest challenge! 💰...
+2026-01-01 10:14:15,078 - __main__ - INFO - ============================================================
+2026-01-01 10:15:37,305 - __main__ - INFO - ============================================================
+2026-01-01 10:15:37,305 - __main__ - INFO - Educational Video Automation Pipeline v2.0
+2026-01-01 10:15:37,305 - __main__ - INFO - Single JSON Design - Self-Contained Questions
+2026-01-01 10:15:37,305 - __main__ - INFO - ============================================================
+2026-01-01 10:15:37,306 - __main__ - INFO - Initializing modules...
+2026-01-01 10:15:37,336 - modules.question_selector - INFO - Loaded 4000 questions from data\questions.json
+2026-01-01 10:15:37,337 - modules.question_selector - INFO - Loaded 5 used question IDs
+2026-01-01 10:15:37,338 - modules.question_selector - INFO - All questions validated successfully
+2026-01-01 10:15:37,339 - modules.image_generator - WARNING - Custom font not found, using default with larger sizes
+2026-01-01 10:15:37,341 - modules.image_generator - INFO - Loaded system font: seguiemj.ttf
+2026-01-01 10:15:37,342 - __main__ - INFO - Question bank stats: 5/4000 used (0.12%)
+2026-01-01 10:15:37,343 - __main__ - INFO - Remaining by difficulty: {'hard': 1327, 'easy': 1336, 'medium': 1332}
+2026-01-01 10:15:38,375 - __main__ - INFO - Facebook Token Status: 59 days remaining
+2026-01-01 10:15:38,376 - __main__ - INFO - 
+[Step 1/6] Selecting question with metadata...
+2026-01-01 10:15:38,376 - modules.question_selector - INFO - Selected question ID: 6
+2026-01-01 10:15:38,376 - __main__ - INFO - Selected: Question ID 6
+2026-01-01 10:15:38,377 - __main__ - INFO - Difficulty: hard
+2026-01-01 10:15:38,377 - __main__ - INFO - Question: If MISTAKE is coded as 9765412 and REALITY is code...
+2026-01-01 10:15:38,377 - __main__ - INFO - 
+[Step 2/6] Extracting caption and description...
+2026-01-01 10:15:38,377 - __main__ - INFO - Caption: Number coding challenge! 🔢
+2026-01-01 10:15:38,377 - __main__ - INFO - Description length: 238 chars
+2026-01-01 10:15:38,377 - __main__ - INFO - Hashtags count: 10
+2026-01-01 10:15:38,378 - __main__ - INFO - 
+[Step 3/6] Generating question image...
+2026-01-01 10:15:38,378 - modules.image_generator - INFO - Generating image for question ID: 6
+2026-01-01 10:15:38,388 - modules.image_generator - INFO - Dynamic Sizing: Q=70px (was 70), Opt=60px (was 60)
+2026-01-01 10:15:38,433 - modules.image_generator - INFO - Image saved to: assets\temp\question_6.png
+2026-01-01 10:15:38,434 - __main__ - INFO - Image created: assets/temp/question_6.png
+2026-01-01 10:15:38,434 - __main__ - INFO - 
+[Step 4/6] Creating video...
+2026-01-01 10:15:38,434 - modules.video_creator - INFO - Creating video for question ID: 6
+2026-01-01 10:15:38,435 - modules.video_creator - INFO - Found background music: assets\music\Life of Riley - Kevin MacLeod.mp3
+2026-01-01 10:15:40,110 - modules.video_creator - INFO - Video created successfully: assets\temp\video_6.mp4
+2026-01-01 10:15:40,137 - modules.video_creator - INFO - Video verification: 20.000000,600
+2026-01-01 10:15:40,138 - __main__ - INFO - Video created: assets/temp/video_6.mp4
+2026-01-01 10:15:40,138 - __main__ - INFO - 
+[Step 5/6] Uploading to social media...
+2026-01-01 10:15:40,138 - __main__ - INFO - Using caption: Number coding challenge! 🔢
+2026-01-01 10:15:40,138 - __main__ - INFO - Using description with 10 hashtags
+2026-01-01 10:15:40,138 - modules.upload_manager - INFO - Uploading to Facebook Reels...
+2026-01-01 10:15:42,028 - modules.upload_manager - INFO - Upload session initialized: 1006156369240327
+2026-01-01 10:15:53,974 - modules.upload_manager - INFO - Video file uploaded
+2026-01-01 10:15:59,318 - modules.upload_manager - INFO - Facebook upload response: {'success': True, 'message': 'Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.', 'post_id': '122099825955192349'}
+2026-01-01 10:15:59,319 - modules.upload_manager - INFO - Facebook upload successful
+2026-01-01 10:16:00,204 - modules.upload_manager - INFO - Found linked Instagram account: 17841449471756619
+2026-01-01 10:16:00,204 - modules.upload_manager - INFO - Waiting for Facebook video 1006156369240327 to process...
+2026-01-01 10:16:14,452 - modules.upload_manager - INFO - Facebook video source URL retrieved
+2026-01-01 10:16:14,453 - modules.upload_manager - INFO - Waiting 10s for CDN propagation...
+2026-01-01 10:16:24,457 - modules.upload_manager - INFO - Uploading to Instagram Reels...
+2026-01-01 10:16:26,316 - modules.upload_manager - INFO - Instagram container created: 18058696832649059
+2026-01-01 10:16:32,391 - modules.upload_manager - ERROR - Instagram upload failed: Instagram transcoding failed: {'status_code': 'ERROR', 'status': 'Error: Media upload has failed with error code 2207076', 'id': '18058696832649059'}
+2026-01-01 10:16:32,395 - modules.upload_manager - INFO - Uploading to YouTube Shorts...
+2026-01-01 10:16:32,718 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-01-01 10:16:49,979 - modules.upload_manager - INFO - YouTube upload successful: _k_LF2RB4Uw
+2026-01-01 10:16:49,980 - __main__ - INFO - Facebook: ✅ Success
+2026-01-01 10:16:49,980 - __main__ - INFO - Instagram: ❌ Failed
+2026-01-01 10:16:49,980 - __main__ - ERROR - Error: Instagram transcoding failed: {'status_code': 'ERROR', 'status': 'Error: Media upload has failed with error code 2207076', 'id': '18058696832649059'}
+2026-01-01 10:16:49,980 - __main__ - INFO - Youtube: ✅ Success
+2026-01-01 10:16:49,980 - __main__ - INFO - 
+[Step 6/6] Sending Telegram notification...
+2026-01-01 10:16:51,165 - modules.telegram_notifier - INFO - Telegram notification sent successfully
+2026-01-01 10:16:51,167 - modules.question_selector - INFO - Marked question 6 as used
+2026-01-01 10:16:51,167 - __main__ - INFO - Question 6 marked as used
+2026-01-01 10:16:51,167 - __main__ - INFO - 
+Cleaning up temporary files...
+2026-01-01 10:16:51,168 - __main__ - INFO - 
+============================================================
+2026-01-01 10:16:51,168 - __main__ - INFO - Pipeline execution completed successfully!
+2026-01-01 10:16:51,168 - __main__ - INFO - Question ID: 6
+2026-01-01 10:16:51,168 - __main__ - INFO - Difficulty: hard
+2026-01-01 10:16:51,168 - __main__ - INFO - Caption used: Number coding challenge! 🔢...
+2026-01-01 10:16:51,168 - __main__ - INFO - ============================================================
+2026-01-01 10:20:08,476 - __main__ - INFO - ============================================================
+2026-01-01 10:20:08,476 - __main__ - INFO - Educational Video Automation Pipeline v2.0
+2026-01-01 10:20:08,477 - __main__ - INFO - Single JSON Design - Self-Contained Questions
+2026-01-01 10:20:08,477 - __main__ - INFO - ============================================================
+2026-01-01 10:20:08,477 - __main__ - INFO - Initializing modules...
+2026-01-01 10:20:08,507 - modules.question_selector - INFO - Loaded 4000 questions from data\questions.json
+2026-01-01 10:20:08,508 - modules.question_selector - INFO - Loaded 6 used question IDs
+2026-01-01 10:20:08,510 - modules.question_selector - INFO - All questions validated successfully
+2026-01-01 10:20:08,510 - modules.image_generator - WARNING - Custom font not found, using default with larger sizes
+2026-01-01 10:20:08,512 - modules.image_generator - INFO - Loaded system font: seguiemj.ttf
+2026-01-01 10:20:08,513 - __main__ - INFO - Question bank stats: 6/4000 used (0.15%)
+2026-01-01 10:20:08,513 - __main__ - INFO - Remaining by difficulty: {'easy': 1336, 'medium': 1332, 'hard': 1326}
+2026-01-01 10:20:09,558 - __main__ - INFO - Facebook Token Status: 59 days remaining
+2026-01-01 10:20:09,559 - __main__ - INFO - 
+[Step 1/6] Selecting question with metadata...
+2026-01-01 10:20:09,559 - modules.question_selector - INFO - Selected question ID: 7
+2026-01-01 10:20:09,560 - __main__ - INFO - Selected: Question ID 7
+2026-01-01 10:20:09,560 - __main__ - INFO - Difficulty: easy
+2026-01-01 10:20:09,560 - __main__ - INFO - Question: What is 30% of 150?...
+2026-01-01 10:20:09,560 - __main__ - INFO - 
+[Step 2/6] Extracting caption and description...
+2026-01-01 10:20:09,561 - __main__ - INFO - Caption: Percentage basics! 📊
+2026-01-01 10:20:09,561 - __main__ - INFO - Description length: 216 chars
+2026-01-01 10:20:09,561 - __main__ - INFO - Hashtags count: 10
+2026-01-01 10:20:09,561 - __main__ - INFO - 
+[Step 3/6] Generating question image...
+2026-01-01 10:20:09,561 - modules.image_generator - INFO - Generating image for question ID: 7
+2026-01-01 10:20:09,569 - modules.image_generator - INFO - Dynamic Sizing: Q=70px (was 70), Opt=60px (was 60)
+2026-01-01 10:20:09,607 - modules.image_generator - INFO - Image saved to: assets\temp\question_7.png
+2026-01-01 10:20:09,608 - __main__ - INFO - Image created: assets/temp/question_7.png
+2026-01-01 10:20:09,608 - __main__ - INFO - 
+[Step 4/6] Creating video...
+2026-01-01 10:20:09,609 - modules.video_creator - INFO - Creating video for question ID: 7
+2026-01-01 10:20:09,609 - modules.video_creator - INFO - Found background music: assets\music\Life of Riley - Kevin MacLeod.mp3
+2026-01-01 10:20:11,328 - modules.video_creator - INFO - Video created successfully: assets\temp\video_7.mp4
+2026-01-01 10:20:11,354 - modules.video_creator - INFO - Video verification: 20.000000,600
+2026-01-01 10:20:11,355 - __main__ - INFO - Video created: assets/temp/video_7.mp4
+2026-01-01 10:20:11,355 - __main__ - INFO - 
+[Step 5/6] Uploading to social media...
+2026-01-01 10:20:11,355 - __main__ - INFO - Using caption: Percentage basics! 📊
+2026-01-01 10:20:11,355 - __main__ - INFO - Using description with 10 hashtags
+2026-01-01 10:20:11,355 - modules.upload_manager - INFO - Uploading to Facebook Reels...
+2026-01-01 10:20:13,087 - modules.upload_manager - INFO - Upload session initialized: 904572068663353
+2026-01-01 10:20:19,850 - modules.upload_manager - INFO - Video file uploaded
+2026-01-01 10:20:24,744 - modules.upload_manager - INFO - Facebook upload response: {'success': True, 'message': 'Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.', 'post_id': '122099829831192349'}
+2026-01-01 10:20:24,745 - modules.upload_manager - INFO - Facebook upload successful
+2026-01-01 10:20:25,709 - modules.upload_manager - INFO - Found linked Instagram account: 17841449471756619
+2026-01-01 10:20:25,710 - modules.upload_manager - INFO - Uploading to Instagram Reels (Binary)...
+2026-01-01 10:20:26,632 - modules.upload_manager - INFO - Instagram upload session initialized: 18058697108649059
+2026-01-01 10:20:29,440 - modules.upload_manager - ERROR - Instagram upload failed: 400 Client Error: Bad Request for url: https://rupload.facebook.com/ig-api-upload/v24.0/18058697108649059
+2026-01-01 10:20:29,444 - modules.upload_manager - INFO - Uploading to YouTube Shorts...
+2026-01-01 10:20:29,762 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-01-01 10:20:36,363 - modules.upload_manager - INFO - YouTube upload successful: 9QqlWEDr8g8
+2026-01-01 10:20:36,365 - __main__ - INFO - Facebook: ✅ Success
+2026-01-01 10:20:36,365 - __main__ - INFO - Instagram: ❌ Failed
+2026-01-01 10:20:36,366 - __main__ - ERROR - Error: 400 Client Error: Bad Request for url: https://rupload.facebook.com/ig-api-upload/v24.0/18058697108649059
+2026-01-01 10:20:36,366 - __main__ - INFO - Youtube: ✅ Success
+2026-01-01 10:20:36,366 - __main__ - INFO - 
+[Step 6/6] Sending Telegram notification...
+2026-01-01 10:20:38,052 - modules.telegram_notifier - INFO - Telegram notification sent successfully
+2026-01-01 10:20:38,054 - modules.question_selector - INFO - Marked question 7 as used
+2026-01-01 10:20:38,054 - __main__ - INFO - Question 7 marked as used
+2026-01-01 10:20:38,055 - __main__ - INFO - 
+Cleaning up temporary files...
+2026-01-01 10:20:38,055 - __main__ - INFO - 
+============================================================
+2026-01-01 10:20:38,056 - __main__ - INFO - Pipeline execution completed successfully!
+2026-01-01 10:20:38,056 - __main__ - INFO - Question ID: 7
+2026-01-01 10:20:38,056 - __main__ - INFO - Difficulty: easy
+2026-01-01 10:20:38,056 - __main__ - INFO - Caption used: Percentage basics! 📊...
+2026-01-01 10:20:38,056 - __main__ - INFO - ============================================================
+2026-01-01 10:21:30,100 - __main__ - INFO - ============================================================
+2026-01-01 10:21:30,100 - __main__ - INFO - Educational Video Automation Pipeline v2.0
+2026-01-01 10:21:30,101 - __main__ - INFO - Single JSON Design - Self-Contained Questions
+2026-01-01 10:21:30,101 - __main__ - INFO - ============================================================
+2026-01-01 10:21:30,101 - __main__ - INFO - Initializing modules...
+2026-01-01 10:21:30,131 - modules.question_selector - INFO - Loaded 4000 questions from data\questions.json
+2026-01-01 10:21:30,131 - modules.question_selector - INFO - Loaded 7 used question IDs
+2026-01-01 10:21:30,133 - modules.question_selector - INFO - All questions validated successfully
+2026-01-01 10:21:30,134 - modules.image_generator - WARNING - Custom font not found, using default with larger sizes
+2026-01-01 10:21:30,136 - modules.image_generator - INFO - Loaded system font: seguiemj.ttf
+2026-01-01 10:21:30,137 - __main__ - INFO - Question bank stats: 7/4000 used (0.18%)
+2026-01-01 10:21:30,137 - __main__ - INFO - Remaining by difficulty: {'easy': 1335, 'medium': 1332, 'hard': 1326}
+2026-01-01 10:21:31,157 - __main__ - INFO - Facebook Token Status: 59 days remaining
+2026-01-01 10:21:31,158 - __main__ - INFO - 
+[Step 1/6] Selecting question with metadata...
+2026-01-01 10:21:31,159 - modules.question_selector - INFO - Selected question ID: 8
+2026-01-01 10:21:31,159 - __main__ - INFO - Selected: Question ID 8
+2026-01-01 10:21:31,159 - __main__ - INFO - Difficulty: easy
+2026-01-01 10:21:31,159 - __main__ - INFO - Question: Which number comes next in the series: 2, 4, 8, 16...
+2026-01-01 10:21:31,159 - __main__ - INFO - 
+[Step 2/6] Extracting caption and description...
+2026-01-01 10:21:31,160 - __main__ - INFO - Caption: Number series puzzle! 🔢
+2026-01-01 10:21:31,160 - __main__ - INFO - Description length: 221 chars
+2026-01-01 10:21:31,160 - __main__ - INFO - Hashtags count: 10
+2026-01-01 10:21:31,160 - __main__ - INFO - 
+[Step 3/6] Generating question image...
+2026-01-01 10:21:31,160 - modules.image_generator - INFO - Generating image for question ID: 8
+2026-01-01 10:21:31,169 - modules.image_generator - INFO - Dynamic Sizing: Q=70px (was 70), Opt=60px (was 60)
+2026-01-01 10:21:31,207 - modules.image_generator - INFO - Image saved to: assets\temp\question_8.png
+2026-01-01 10:21:31,208 - __main__ - INFO - Image created: assets/temp/question_8.png
+2026-01-01 10:21:31,209 - __main__ - INFO - 
+[Step 4/6] Creating video...
+2026-01-01 10:21:31,209 - modules.video_creator - INFO - Creating video for question ID: 8
+2026-01-01 10:21:31,209 - modules.video_creator - INFO - Found background music: assets\music\Life of Riley - Kevin MacLeod.mp3
+2026-01-01 10:21:32,989 - modules.video_creator - INFO - Video created successfully: assets\temp\video_8.mp4
+2026-01-01 10:21:33,015 - modules.video_creator - INFO - Video verification: 20.000000,600
+2026-01-01 10:21:33,015 - __main__ - INFO - Video created: assets/temp/video_8.mp4
+2026-01-01 10:21:33,015 - __main__ - INFO - 
+[Step 5/6] Uploading to social media...
+2026-01-01 10:21:33,015 - __main__ - INFO - Using caption: Number series puzzle! 🔢
+2026-01-01 10:21:33,015 - __main__ - INFO - Using description with 10 hashtags
+2026-01-01 10:21:33,015 - modules.upload_manager - INFO - Uploading to Facebook Reels...
+2026-01-01 10:21:35,199 - modules.upload_manager - INFO - Upload session initialized: 879995951249398
+2026-01-01 10:21:43,408 - modules.upload_manager - INFO - Video file uploaded
+2026-01-01 10:21:48,207 - modules.upload_manager - INFO - Facebook upload response: {'success': True, 'message': 'Video is Processing. To check the status of the video, please follow the instructions listed at https://developers.facebook.com/docs/video-api/guides/reels-publishing#get-the-upload-status.', 'post_id': '122099830413192349'}
+2026-01-01 10:21:48,208 - modules.upload_manager - INFO - Facebook upload successful
+2026-01-01 10:21:50,228 - modules.upload_manager - INFO - Found linked Instagram account: 17841449471756619
+2026-01-01 10:21:50,228 - modules.upload_manager - INFO - Uploading to Instagram Reels (Binary)...
+2026-01-01 10:21:51,408 - modules.upload_manager - INFO - Instagram upload session initialized: 18058697321649059
+2026-01-01 10:22:18,304 - modules.upload_manager - INFO - Instagram video binary uploaded
+2026-01-01 10:22:26,216 - modules.upload_manager - INFO - Instagram publish request sent: 17878449987364609
+2026-01-01 10:23:25,493 - modules.upload_manager - INFO - Uploading to YouTube Shorts...
+2026-01-01 10:23:25,805 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-01-01 10:23:31,921 - modules.upload_manager - INFO - YouTube upload successful: WNvzNZGksA0
+2026-01-01 10:23:31,922 - __main__ - INFO - Facebook: ✅ Success
+2026-01-01 10:23:31,922 - __main__ - INFO - Instagram: ✅ Success
+2026-01-01 10:23:31,922 - __main__ - INFO - Youtube: ✅ Success
+2026-01-01 10:23:31,923 - __main__ - INFO - 
+[Step 6/6] Sending Telegram notification...
+2026-01-01 10:23:33,368 - modules.telegram_notifier - INFO - Telegram notification sent successfully
+2026-01-01 10:23:33,371 - modules.question_selector - INFO - Marked question 8 as used
+2026-01-01 10:23:33,371 - __main__ - INFO - Question 8 marked as used
+2026-01-01 10:23:33,371 - __main__ - INFO - 
+Cleaning up temporary files...
+2026-01-01 10:23:33,372 - __main__ - INFO - 
+============================================================
+2026-01-01 10:23:33,372 - __main__ - INFO - Pipeline execution completed successfully!
+2026-01-01 10:23:33,372 - __main__ - INFO - Question ID: 8
+2026-01-01 10:23:33,372 - __main__ - INFO - Difficulty: easy
+2026-01-01 10:23:33,373 - __main__ - INFO - Caption used: Number series puzzle! 🔢...
+2026-01-01 10:23:33,373 - __main__ - INFO - ============================================================

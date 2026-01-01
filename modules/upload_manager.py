@@ -10,6 +10,9 @@ from typing import Dict, Any, Optional
 import requests
 import os
 
+# Suppress harmless Google API warning
+logging.getLogger('googleapiclient.discovery_cache').setLevel(logging.ERROR)
+
 logger = logging.getLogger(__name__)
 
 
@@ -51,11 +54,26 @@ class UploadManager:
         )
         full_description = description + cta_text + music_license
         
-        # Upload to Facebook
+        # Upload to Facebook & Instagram (Independent but shared config)
         if self.fb_config['enabled']:
+            # 1. Upload to Facebook
             results['facebook'] = self._upload_facebook(
                 video_path, caption, full_description
             )
+            
+            # 2. Upload to Instagram (Check for linked account)
+            access_token = self.fb_config['access_token']
+            page_id = self.fb_config['page_id']
+            
+            ig_user_id = self._get_instagram_account_id(page_id, access_token)
+            
+            if ig_user_id:
+                logger.info(f"Found linked Instagram account: {ig_user_id}")
+                results['instagram'] = self._upload_instagram(
+                    video_path, caption, access_token, ig_user_id
+                )
+            else:
+                logger.info("No linked Instagram account found for crossposting")
         
         # Upload to YouTube
         if self.yt_config['enabled']:
@@ -316,3 +334,127 @@ class UploadManager:
                 time.sleep(delay)
         
         return result
+
+    def _get_instagram_account_id(self, page_id: str, access_token: str) -> Optional[str]:
+        """
+        Get the Instagram Business Account ID linked to the Facebook Page.
+        """
+        try:
+            url = f"https://graph.facebook.com/v18.0/{page_id}"
+            params = {
+                'fields': 'instagram_business_account',
+                'access_token': access_token
+            }
+            response = requests.get(url, params=params)
+            data = response.json()
+            
+            if 'instagram_business_account' in data:
+                return data['instagram_business_account']['id']
+            return None
+        except Exception as e:
+            logger.warning(f"Could not get linked Instagram account: {e}")
+            return None
+
+    def _upload_instagram(self, video_path: str, caption: str, access_token: str, ig_user_id: str) -> Dict[str, Any]:
+        """
+        Upload video to Instagram via the Graph API using Resumable Upload (Binary).
+        """
+        logger.info("Uploading to Instagram Reels (Binary)...")
+        
+        try:
+            # Step 1: Initialize Upload Session
+            init_url = f"https://graph.facebook.com/v18.0/{ig_user_id}/media"
+            init_data = {
+                'media_type': 'REELS',
+                'upload_type': 'resumable',
+                'caption': caption,
+                'share_to_feed': 'true',
+                'access_token': access_token
+            }
+            
+            init_response = requests.post(init_url, data=init_data)
+            init_response.raise_for_status()
+            init_result = init_response.json()
+            
+            uri = init_result.get('uri')
+            video_id = init_result.get('id') # This is actually the container ID used for status checks? No, documentation says 'id' is container ID.
+            
+            if not uri or not video_id:
+                raise Exception("Failed to initialize Instagram upload session")
+
+            logger.info(f"Instagram upload session initialized: {video_id}")
+
+            # Step 2: Upload Binary
+            file_size = os.path.getsize(video_path)
+            
+            with open(video_path, 'rb') as video_file:
+                headers = {
+                    'Authorization': f'OAuth {access_token}',
+                    'offset': '0',
+                    'file_size': str(file_size),
+                    'Content-Type': 'application/octet-stream'
+                }
+                
+                upload_response = requests.post(
+                    uri,
+                    data=video_file,
+                    headers=headers
+                )
+                
+                if not upload_response.ok:
+                    logger.error(f"Instagram binary upload failed: {upload_response.text}")
+                upload_response.raise_for_status()
+            
+            logger.info("Instagram video binary uploaded")
+
+            # Step 3: Publish Media
+            publish_url = f"https://graph.facebook.com/v18.0/{ig_user_id}/media_publish"
+            publish_data = {
+                'creation_id': video_id, 
+                'access_token': access_token
+            }
+            
+            publish_response = requests.post(publish_url, data=publish_data)
+            publish_response.raise_for_status()
+            publish_result = publish_response.json()
+            ig_media_id = publish_result.get('id')
+            
+            logger.info(f"Instagram publish request sent: {ig_media_id}")
+
+            # Step 4: Wait for processing status (Optional but good for confirmation)
+            # Check status of the CONTAINER (video_id), not the media_id
+            status_url = f"https://graph.facebook.com/v18.0/{video_id}"
+            status_params = {
+                'fields': 'status_code,status',
+                'access_token': access_token
+            }
+            
+            for i in range(10): 
+                time.sleep(5)
+                status_response = requests.get(status_url, params=status_params)
+                status_data = status_response.json()
+                
+                status_code = status_data.get('status_code')
+                if status_code == 'FINISHED':
+                    logger.info("Instagram processing FINISHED")
+                    break
+                elif status_code == 'ERROR':
+                    logger.error(f"Instagram processing ERROR: {status_data}")
+                    # Don't throw here, passing back the ID might still be useful
+                    break
+                
+                logger.debug(f"Instagram status: {status_code}")
+
+            return {
+                'success': True,
+                'id': ig_media_id,
+                'container_id': video_id,
+                'response': publish_result
+            }
+
+        except Exception as e:
+            logger.error(f"Instagram upload failed: {e}")
+            return {
+                'success': False,
+                'error': str(e)
+            }
