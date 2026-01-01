@@ -70,7 +70,7 @@ class UploadManager:
             if ig_user_id:
                 logger.info(f"Found linked Instagram account: {ig_user_id}")
                 results['instagram'] = self._upload_instagram(
-                    video_path, caption, access_token, ig_user_id
+                    video_path, full_description, access_token, ig_user_id
                 )
             else:
                 logger.info("No linked Instagram account found for crossposting")
