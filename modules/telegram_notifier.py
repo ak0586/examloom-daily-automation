@@ -66,6 +66,7 @@ class TelegramNotifier:
         
         # Check upload status
         fb_status = "✅ Success" if upload_results.get('facebook', {}).get('success') else "❌ Failed"
+        ig_status = "✅ Success" if upload_results.get('instagram', {}).get('success') else "❌ Failed"
         yt_status = "✅ Success" if upload_results.get('youtube', {}).get('success') else "❌ Failed"
         
         # Build message
@@ -74,6 +75,7 @@ class TelegramNotifier:
             "━━━━━━━━━━━━━━━━━━\n\n"
             f"📝 Question ID: `{question_id}`\n"
             f"📘 Facebook: {fb_status}\n"
+            f"📸 Instagram: {ig_status}\n"
             f"▶️ YouTube: {yt_status}\n"
             f"🕒 Time: {timestamp}\n\n"
         )
@@ -84,14 +86,22 @@ class TelegramNotifier:
             message += f"🔗 YouTube: {yt_url}\n"
         
         if upload_results.get('facebook', {}).get('success'):
-            fb_video_id = upload_results['facebook'].get('video_id', 'N/A')
-            message += f"🔗 Facebook Video ID: `{fb_video_id}`\n"
+            fb_url = upload_results['facebook'].get('url', 'N/A')
+            message += f"🔗 Facebook: {fb_url}\n"
+
+        if upload_results.get('instagram', {}).get('success'):
+            ig_url = upload_results['instagram'].get('url', 'N/A')
+            message += f"🔗 Instagram: {ig_url}\n"
         
         # Add error info if any failed
         errors = []
         if not upload_results.get('facebook', {}).get('success'):
             fb_error = upload_results.get('facebook', {}).get('error', 'Unknown error')
             errors.append(f"Facebook: {fb_error}")
+
+        if not upload_results.get('instagram', {}).get('success'):
+            ig_error = upload_results.get('instagram', {}).get('error', 'Unknown error')
+            errors.append(f"Instagram: {ig_error}")
         
         if not upload_results.get('youtube', {}).get('success'):
             yt_error = upload_results.get('youtube', {}).get('error', 'Unknown error')

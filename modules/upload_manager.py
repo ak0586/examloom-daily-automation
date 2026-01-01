@@ -199,6 +199,7 @@ class UploadManager:
             return {
                 'success': True,
                 'video_id': video_id,
+                'url': f"https://www.facebook.com/reel/{video_id}",
                 'response': finish_result
             }
             
@@ -444,11 +445,29 @@ class UploadManager:
                     break
                 
                 logger.debug(f"Instagram status: {status_code}")
+                
+            # Step 5: Get Permalink
+            permalink = None
+            try:
+                # Need to query the media ID (ig_media_id) not the container ID
+                media_url = f"https://graph.facebook.com/v18.0/{ig_media_id}"
+                media_params = {
+                    'fields': 'permalink,shortcode',
+                    'access_token': access_token
+                }
+                media_response = requests.get(media_url, params=media_params)
+                if media_response.ok:
+                    media_data = media_response.json()
+                    permalink = media_data.get('permalink')
+                    logger.info(f"Instagram permalink: {permalink}")
+            except Exception as e:
+                logger.warning(f"Could not fetch Instagram permalink: {e}")
 
             return {
                 'success': True,
                 'id': ig_media_id,
                 'container_id': video_id,
+                'url': permalink or f"https://www.instagram.com/reel/{ig_media_id}/", # Fallback
                 'response': publish_result
             }
 
