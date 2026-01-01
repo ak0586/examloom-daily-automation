@@ -130,12 +130,15 @@ class TelegramNotifier:
                 return True
                 
             except Exception as e:
+                # Redact token from error message to prevent leaks
+                error_msg = str(e).replace(self.bot_token, "[REDACTED]")
+                
                 if attempt < max_retries - 1:
-                    logger.warning(f"Telegram send failed (attempt {attempt + 1}/{max_retries}): {e}. Retrying...")
+                    logger.warning(f"Telegram send failed (attempt {attempt + 1}/{max_retries}): {error_msg}. Retrying...")
                     import time
                     time.sleep(2)
                 else:
-                    logger.error(f"Failed to send Telegram message after {max_retries} attempts: {e}")
+                    logger.error(f"Failed to send Telegram message after {max_retries} attempts: {error_msg}")
                     return False
     
     def send_alert(self, title: str, message: str) -> bool:
