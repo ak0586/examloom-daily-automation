@@ -50,7 +50,6 @@ class UploadManager:
         music_license = (
             "\n\nMusic: Life of Riley – Kevin MacLeod\n"
             "Licensed under Creative Commons: Attribution 3.0\n"
-            "http://creativecommons.org/licenses/by/3.0/"
         )
         full_description = description + cta_text + music_license
         
