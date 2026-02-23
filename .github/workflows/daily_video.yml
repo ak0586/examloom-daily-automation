@@ -9,7 +9,7 @@ on:
     - cron: '30 2 * * *'
 
     # Afternoon upload: 01:00 PM IST (07:30 UTC)
-    - cron: '30 7 * * *'
+    #- cron: '30 7 * * *'
 
     # Evening upload: 07:30 PM IST (14:00 UTC)
     - cron: '0 14 * * *'
