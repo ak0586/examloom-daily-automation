@@ -14,6 +14,7 @@ setup.sh
 verification_result.txt
 verify_description.py
 generate_secrets.py
+generate_massive_questions.py
 
 # Logs
 # logs/
@@ -32,3 +33,4 @@ video/
 # OS
 .DS_Store
 Thumbs.db
+
