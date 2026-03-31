@@ -135,6 +135,110 @@ Since GitHub Actions cannot open a browser for YouTube login, you must encode yo
     - `FACEBOOK_ACCESS_TOKEN`
     - `TELEGRAM_BOT_TOKEN`
     - `TELEGRAM_CHAT_ID`
+  
+4.  # Generate Facebook Access Token for Automation
+
+Follow these steps to generate a **Facebook Page Access Token** for the automation system.
+
+## 1. Open Graph API Explorer
+
+* Go to: https://developers.facebook.com/tools/explorer/
+* Log in with the Facebook account that manages the page.
+
+## 2. Select the Meta App
+
+* In the **Meta App** dropdown, select **Business Store**.
+
+## 3. Choose Token Type
+
+* In **User or Page**, select **User Token**.
+
+## 4. Generate Access Token
+
+* Click **Generate Access Token**.
+
+## 5. Select Required Permissions
+
+Enable the following permissions:
+
+```
+business_management
+pages_show_list
+pages_manage_metadata
+pages_manage_posts
+pages_manage_engagement
+pages_read_engagement
+pages_read_user_content
+instagram_basic
+instagram_content_publish
+```
+
+Then confirm the permissions.
+
+## 6. Get Page Access Token
+
+* In the API endpoint field, run:
+
+```
+GET /me/accounts
+```
+
+* Click **Submit**.
+
+The response will include the **Page Access Token** for each page.
+
+Example response:
+
+```json
+{
+  "data": [
+    {
+      "name": "Page Name",
+      "id": "PAGE_ID",
+      "access_token": "PAGE_ACCESS_TOKEN"
+    }
+  ]
+}
+```
+
+## 7. Copy the Page Access Token
+
+Copy the **access_token** corresponding to the page used for automation.
+
+## 8. Update Environment Variables
+
+Paste the token into your `.env` file:
+
+```
+FACEBOOK_ACCESS_TOKEN=PAGE_ACCESS_TOKEN
+FACEBOOK_PAGE_ID=YOUR_PAGE_ID
+```
+
+## 9. Verify Instagram Connection (Optional but Recommended)
+
+Run:
+
+```
+GET /{PAGE_ID}?fields=instagram_business_account
+```
+
+Expected response:
+
+```json
+{
+  "instagram_business_account": {
+    "id": "INSTAGRAM_BUSINESS_ID"
+  }
+}
+```
+
+If this field is present, Instagram cross-posting will work correctly.
+
+## 10. Security Note
+
+* Never commit access tokens to the repository.
+* Store tokens only in **environment variables** or **secret managers**.
+
 
 ---
 
