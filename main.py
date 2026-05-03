@@ -143,7 +143,7 @@ def main():
             f.write(str(hour))
 
     # ⏱️ Allow only first 5 minutes of target hour
-    if not (now.hour in target_hours and now.minute < 5):
+    if not (now.hour in target_hours and now.minute < 15):
         print(f"[SKIP] Not scheduled time: {now}")
         return 0
 
