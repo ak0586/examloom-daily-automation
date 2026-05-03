@@ -5,15 +5,7 @@ permissions:
 
 on:
   schedule:
-    # Morning upload: 07:00 AM IST (01:30 UTC)
-    - cron: '30 1 * * *'
-
-    # Afternoon upload: 01:00 PM IST (07:30 UTC)
-    - cron: '30 7 * * *'
-
-    # Evening upload: 07:00 PM IST (13:30 UTC)
-    - cron: '30 13 * * *'
-
+    - cron: '*/15 * * * *'   # every 5 minutes
   workflow_dispatch:
 
 jobs:
