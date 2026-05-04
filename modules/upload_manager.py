@@ -140,7 +140,7 @@ class UploadManager:
             access_token = self.fb_config['access_token']
             
             # Step 1: Initialize upload
-            init_url = f"https://graph.facebook.com/v18.0/{page_id}/video_reels"
+            init_url = f"https://graph.facebook.com/v23.0/{page_id}/video_reels"
             
             init_data = {
                 'upload_phase': 'start',
