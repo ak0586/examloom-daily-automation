@@ -123,37 +123,7 @@ def prune_logs(log_file, max_sessions):
 def main():
     """Main execution function."""
 
-    from datetime import datetime
-    import pytz
-
-    ist = pytz.timezone('Asia/Kolkata')
-    now = datetime.now(ist)
-
-    target_hours = [7, 13, 19]
-    lock_file = "last_run.txt"
-
-    def already_ran(hour):
-        if not os.path.exists(lock_file):
-            return False
-        with open(lock_file, "r") as f:
-            return f.read().strip() == str(hour)
-
-    def mark_ran(hour):
-        with open(lock_file, "w") as f:
-            f.write(str(hour))
-
-    # ⏱️ Allow only first 5 minutes of target hour
-    if not (now.hour in target_hours and now.minute < 15):
-        print(f"[SKIP] Not scheduled time: {now}")
-        return 0
-
-    # 🔁 Prevent duplicate runs
-    if already_ran(now.hour):
-        print(f"[SKIP] Already ran for {now.hour}:00 slot")
-        return 0
-
-    print(f"[RUN] Executing pipeline at {now}")
-    
+        
     # Load environment variables
     load_dotenv()
     
@@ -300,7 +270,7 @@ def main():
         logger.info(f"Question ID: {question['id']}")
         logger.info(f"Difficulty: {question['difficulty']}")
         logger.info(f"Caption used: {caption[:30]}...")
-        mark_ran(now.hour) 
+        logger.info("=" * 60) 
         
         return 0
         
