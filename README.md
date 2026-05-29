@@ -300,8 +300,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👨‍💻 Developer
 
 Developed by **Ankit** (or your name/organization).
-- **GitHub**: [YourProfile](https://github.com/ak0586)
-- **LinkedIn**: [YourProfile](https://www.linkedin.com/in/ankit59/)
+- **GitHub**: [Ankit Kumar](https://github.com/ak0586)
+- **LinkedIn**: [ankit59](https://www.linkedin.com/in/ankit59/)
 
 ## 📬 Contact
 
